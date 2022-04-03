@@ -1,0 +1,827 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Dockyard Engine\main.cpp">
+      <Filter>Application\Dockyard Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Dockyard.cpp">
+      <Filter>Application\Dockyard Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Asset Management\ShaderManager.cpp">
+      <Filter>Application\Dockyard Engine\Asset Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Asset Management\TextureManager.cpp">
+      <Filter>Application\Dockyard Engine\Asset Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Asset Management\ModelManager.cpp">
+      <Filter>Application\Dockyard Engine\Asset Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Resources\LoadResources.cpp">
+      <Filter>Application\Dockyard Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Camera Manager\CameraManager.cpp">
+      <Filter>Application\Dockyard Engine\Camera Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Resources\GameEnd.cpp">
+      <Filter>Application\Dockyard Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Resources\GameInitialize.cpp">
+      <Filter>Application\Dockyard Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\GameObject\GameObject.cpp">
+      <Filter>Application\Dockyard Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\SceneRegistrationCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\UpdateRegistrationCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\DrawDeregistrationCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\DrawRegistrationCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\UpdateDeregistrationCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\AlarmDeregistrationCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\AlarmRegistrationCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\InputRegistrationCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\InputDeregistrationCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\GameObject\Commands\GameObjectEntryCommand.cpp">
+      <Filter>Application\Dockyard Engine\GameObject\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\GameObject\Commands\GameObjectExitCommand.cpp">
+      <Filter>Application\Dockyard Engine\GameObject\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Time\TimeManager.cpp">
+      <Filter>Application\Dockyard Engine\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\Scene Registration Broker\SceneRegistrationBroker.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration\Scene Registration Broker</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\-X-able Managers\AlarmableManager.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\-X-able Managers\DrawableManager.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\-X-able Managers\KeyboardEventManager.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\-X-able Managers\SingleKeyEventManager.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\-X-able Managers\UpdatableManager.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\SceneManager.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\GameObject\-X-ables\Alarmable.cpp">
+      <Filter>Application\Dockyard Engine\GameObject\&lt;X&gt;ables</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\GameObject\-X-ables\Drawable.cpp">
+      <Filter>Application\Dockyard Engine\GameObject\&lt;X&gt;ables</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\GameObject\-X-ables\Inputable.cpp">
+      <Filter>Application\Dockyard Engine\GameObject\&lt;X&gt;ables</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\GameObject\-X-ables\Updatable.cpp">
+      <Filter>Application\Dockyard Engine\GameObject\&lt;X&gt;ables</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\Frigate.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Scenes\DemoScene.cpp">
+      <Filter>Application\User Code\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Time\FreezeTime.cpp">
+      <Filter>Application\Dockyard Engine\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Changing Scenes\SceneChangeCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Changing Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Scenes\DemoScene2.cpp">
+      <Filter>Application\User Code\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\Bullets\Bullet.cpp">
+      <Filter>Application\User Code\Objects / Classes\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\Bullets\BulletFactory.cpp">
+      <Filter>Application\User Code\Objects / Classes\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\Bullets\BulletPool.cpp">
+      <Filter>Application\User Code\Objects / Classes\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Collisions\CollisionManager.cpp">
+      <Filter>Application\Dockyard Engine\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\GameObject\-X-ables\Collidable.cpp">
+      <Filter>Application\Dockyard Engine\GameObject\&lt;X&gt;ables</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Collisions\CollidableGroup.cpp">
+      <Filter>Application\Dockyard Engine\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\CollisionDeregistrationCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\CollisionRegistrationCommand.cpp">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestPairCommand.cpp">
+      <Filter>Application\Dockyard Engine\Collisions\Collision Test Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestSelfCommand.cpp">
+      <Filter>Application\Dockyard Engine\Collisions\Collision Test Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\PlayerCharacter.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Scenes\MainScene.cpp">
+      <Filter>Application\User Code\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\CharacterAnimator.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\CameraController.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Collisions\Collision Volumes\CollisionVolumeBSphere.cpp">
+      <Filter>Application\Dockyard Engine\Collisions\Collision Volumes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\Prop.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\GroundPanel.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\WorldPlane.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\Skybox.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\House.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\DemoCam.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Sprites\DockyardSprite.cpp">
+      <Filter>Application\Dockyard Engine\Sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Asset Management\ImageManager.cpp">
+      <Filter>Application\Dockyard Engine\Asset Management</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\MiniMap.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Sprites\SpriteFont\SpriteFont.cpp">
+      <Filter>Application\Dockyard Engine\Sprites\SpriteFont</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Sprites\SpriteString\SpriteString.cpp">
+      <Filter>Application\Dockyard Engine\Sprites\SpriteString</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\Text.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Asset Management\SpriteFontManager.cpp">
+      <Filter>Application\Dockyard Engine\Asset Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Debug Tools\Collision Visualizer\CollisionVisualizer.cpp">
+      <Filter>Application\Dockyard Engine\Debug Tools\Collision Visualizer</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Debug Tools\Collision Visualizer\VisualizeCommand.cpp">
+      <Filter>Application\Dockyard Engine\Debug Tools\Collision Visualizer</Filter>
+    </ClCompile>
+    <ClCompile Include="Dockyard Engine\Debug Tools\Screen Text Log\ScreenLog.cpp">
+      <Filter>Application\Dockyard Engine\Debug Tools\Screen Text Log</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\NPCs\OldMan.cpp">
+      <Filter>Application\User Code\Objects / Classes\NPCs</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\GameState.cpp">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="User Code\Objects + Classes\NPCs\OldLady.cpp">
+      <Filter>Application\User Code\Objects / Classes\NPCs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="_Libs">
+      <UniqueIdentifier>{1392bc0c-ded2-42a7-9ec1-333be4dadedd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application">
+      <UniqueIdentifier>{aef3393e-06a5-4f08-bf4a-3b6be12d1e04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\GLFW">
+      <UniqueIdentifier>{d22a518f-dd11-48ea-8247-bd82c5928233}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\GLFW\include">
+      <UniqueIdentifier>{f1613e77-99f1-482b-bccf-12b6784f3aa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\GLFW\lib">
+      <UniqueIdentifier>{c350b52d-8efa-4eca-a258-d57d45c43245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\SB6">
+      <UniqueIdentifier>{189a2178-2765-49df-b052-8eca24a60d61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\SB6\lib">
+      <UniqueIdentifier>{841af908-0674-4949-8aa0-292e3e84a88b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\SB6\include">
+      <UniqueIdentifier>{d2f5d78b-d9cf-4bd9-bd4e-df7522de593c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\File">
+      <UniqueIdentifier>{fb44cdb2-f236-4b3b-833e-e9e2c3af59cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\File\lib">
+      <UniqueIdentifier>{23abe339-ce80-4523-b0f0-23747e3f512f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\File\include">
+      <UniqueIdentifier>{323b20aa-e08c-4260-84b1-1e85121a9e17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\Math">
+      <UniqueIdentifier>{9fcc2c9b-3e4f-4ab2-a0c5-3099cdf90300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\Math\lib">
+      <UniqueIdentifier>{ea7cbe8f-1aeb-4ad2-bd4e-fa300408bd5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\Math\include">
+      <UniqueIdentifier>{5d126765-1977-4213-89fb-e004f6468da5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\AzulCore">
+      <UniqueIdentifier>{d3f91089-c7e6-474d-8376-afd372d35a8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\AzulCore\lib">
+      <UniqueIdentifier>{8a854cfc-9294-4797-b476-0b2feacdd62f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Libs\AzulCore\include">
+      <UniqueIdentifier>{60eabb98-a714-4df4-8fa1-3fb92ea55bd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine">
+      <UniqueIdentifier>{22d17a05-859e-4f4b-9c2a-a4e46ca5c772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Asset Management">
+      <UniqueIdentifier>{1b4df4b5-1aa1-4656-963f-bdb75a0374cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Resources">
+      <UniqueIdentifier>{15cc3b77-a7ba-4291-b65a-72cebb37c524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\User Code">
+      <UniqueIdentifier>{336a5563-8830-4cc6-a093-ca69dd4a493e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Camera Manager">
+      <UniqueIdentifier>{3fcb93f2-516c-48a2-af20-0336a9062391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\GameObject">
+      <UniqueIdentifier>{07b1d5fb-fe2f-4870-8d9a-0a89c6caf425}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Scene Management">
+      <UniqueIdentifier>{45049f13-3e9c-485b-b84e-f53837c5a926}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\GameObject\Commands">
+      <UniqueIdentifier>{642bb2d9-88df-4e6c-8825-9b820f6cb63a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Time">
+      <UniqueIdentifier>{6bc02386-16b9-4117-8edd-412132665425}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration">
+      <UniqueIdentifier>{3c95205f-68b9-4dd0-9bc3-f3bfeede1789}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration\Scene Registration Broker">
+      <UniqueIdentifier>{cbb12e79-45e9-47cb-a505-5e4d12838a9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Scene Management\&lt;X&gt;able Managers">
+      <UniqueIdentifier>{12e919d1-2886-4cc6-8b57-5727985dea11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Scene Management\&lt;X&gt;able Attorneys">
+      <UniqueIdentifier>{bab119ba-dafd-4420-b869-f000fa5335cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\GameObject\&lt;X&gt;ables">
+      <UniqueIdentifier>{22f5dae6-e68a-4cac-a040-e11964d754a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Asset Management\Attorneys">
+      <UniqueIdentifier>{f6affd77-ab3a-4e39-8e9f-31a0c18b03d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\User Code\Scenes">
+      <UniqueIdentifier>{4ad6282e-61f4-4214-85b0-2677e04fbd66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\User Code\Objects / Classes">
+      <UniqueIdentifier>{36dd9128-2fed-4a83-8b32-ffe7ecae175e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Scene Management\Changing Scenes">
+      <UniqueIdentifier>{760bbc62-c049-4320-add3-a38ab15c3410}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\User Code\Objects / Classes\Bullets">
+      <UniqueIdentifier>{c9e2888d-5fc6-44d2-9362-f35605eed37c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Collisions">
+      <UniqueIdentifier>{08f59fc1-5231-40ab-89c8-a8c9a5839093}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Collisions\Collision Test Commands">
+      <UniqueIdentifier>{57d59c79-3c2e-4e31-82c4-b73e43dc2789}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Collisions\Collision Volumes">
+      <UniqueIdentifier>{e0dac0f1-afd1-4a96-a554-d60ec6d10a76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Sprites">
+      <UniqueIdentifier>{04793b78-56be-4df5-b4b7-65782e7ee05f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Sprites\SpriteString">
+      <UniqueIdentifier>{3bd8cfa0-436e-4b2f-8717-bc5b149f4a3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Sprites\SpriteFont">
+      <UniqueIdentifier>{40e2d192-77c2-4e98-ae94-a00cf3057cf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Debug Tools">
+      <UniqueIdentifier>{546411af-88ce-4dc2-bebf-72654887b945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Debug Tools\Screen Text Log">
+      <UniqueIdentifier>{22eca946-c31c-4303-abae-d53e79ba8252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Dockyard Engine\Debug Tools\Collision Visualizer">
+      <UniqueIdentifier>{5a0a8dbb-ef4e-4040-8759-40676ebe06ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\User Code\Objects / Classes\NPCs">
+      <UniqueIdentifier>{06e1cde1-e0b9-4299-90a8-8ec728a76867}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\dist\GLFW\include\GL\glfw.h">
+      <Filter>_Libs\GLFW\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\arcball.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\object.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\sb6.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\sb6ext.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\sb6ktx.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\sb6mfile.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\shader.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\vmath.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\GL\gl3w.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\GL\glcorearb.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\GL\glext.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\GL\glxext.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\SB6\include\GL\wglext.h">
+      <Filter>_Libs\SB6\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\File\include\File.h">
+      <Filter>_Libs\File\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\Math\include\Align16.h">
+      <Filter>_Libs\Math\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\Math\include\Constants.h">
+      <Filter>_Libs\Math\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\Math\include\Enum.h">
+      <Filter>_Libs\Math\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\Math\include\MathEngine.h">
+      <Filter>_Libs\Math\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\Math\include\Matrix.h">
+      <Filter>_Libs\Math\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\Math\include\Util.h">
+      <Filter>_Libs\Math\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\Math\include\Vect.h">
+      <Filter>_Libs\Math\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\AzulCore.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\AzulFileHdr.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\AzulHelper.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\Camera.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\DebugOut.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\Engine.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\GpuVertTypes.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_ColorByPosition.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_ColorNoTexture.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_ColorNoTextureLight.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_Sprite.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_SpriteBox.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_TextureFlat.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_TextureLight.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_WireframeAutoColor.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_WireframeConstantColor.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\Image.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\Keyboard.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\LibrarySetup.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\Model.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\Mouse.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\Rect.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\ShaderObject.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\Texture.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\AzulCore\include\TextureTGA.h">
+      <Filter>_Libs\AzulCore\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\Math\include\MathApp.h">
+      <Filter>_Libs\Math\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\Math\include\Quat.h">
+      <Filter>_Libs\Math\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\Math\include\QuatApp.h">
+      <Filter>_Libs\Math\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dist\Math\include\VectApp.h">
+      <Filter>_Libs\Math\include</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Dockyard.h">
+      <Filter>Application\Dockyard Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Asset Management\ShaderManager.h">
+      <Filter>Application\Dockyard Engine\Asset Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Asset Management\TextureManager.h">
+      <Filter>Application\Dockyard Engine\Asset Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Asset Management\ModelManager.h">
+      <Filter>Application\Dockyard Engine\Asset Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Camera Manager\CameraManager.h">
+      <Filter>Application\Dockyard Engine\Camera Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\GameObject\GameObject.h">
+      <Filter>Application\Dockyard Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene.h">
+      <Filter>Application\Dockyard Engine\Scene Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\SceneRegistrationCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\UpdateRegistrationCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\DrawDeregistrationCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\DrawRegistrationCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\UpdateDeregistrationCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\SceneRegistrationState.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\AlarmDeregistrationCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\AlarmRegistrationCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\InputRegistrationCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\InputDeregistrationCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\GameObject\Commands\GameObjectEntryCommand.h">
+      <Filter>Application\Dockyard Engine\GameObject\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\GameObject\Commands\GameObjectExitCommand.h">
+      <Filter>Application\Dockyard Engine\GameObject\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\GameObject\GameObjectAttorney.h">
+      <Filter>Application\Dockyard Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Time\TimeManager.h">
+      <Filter>Application\Dockyard Engine\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Time\TimeManagerAttorney.h">
+      <Filter>Application\Dockyard Engine\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\Scene Registration Broker\SceneRegistrationBroker.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration\Scene Registration Broker</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\-X-able Managers\AlarmableManager.h">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\-X-able Managers\DrawableManager.h">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\-X-able Managers\KeyboardEventManager.h">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\-X-able Managers\SingleKeyEventManager.h">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\-X-able Managers\UpdatableManager.h">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\-X-able Attorneys\AlarmableAttorney.h">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Attorneys</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\-X-able Attorneys\DrawableAttorney.h">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Attorneys</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\-X-able Attorneys\InputableAttorney.h">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Attorneys</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\-X-able Attorneys\UpdatableAttorney.h">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Attorneys</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\SceneManager.h">
+      <Filter>Application\Dockyard Engine\Scene Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\GameObject\-X-ables\Alarmable.h">
+      <Filter>Application\Dockyard Engine\GameObject\&lt;X&gt;ables</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\GameObject\-X-ables\Drawable.h">
+      <Filter>Application\Dockyard Engine\GameObject\&lt;X&gt;ables</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\GameObject\-X-ables\Inputable.h">
+      <Filter>Application\Dockyard Engine\GameObject\&lt;X&gt;ables</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\GameObject\-X-ables\Updatable.h">
+      <Filter>Application\Dockyard Engine\GameObject\&lt;X&gt;ables</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Asset Management\Attorneys\ModelManagerAttorney.h">
+      <Filter>Application\Dockyard Engine\Asset Management\Attorneys</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Asset Management\Attorneys\ShaderManagerAttorney.h">
+      <Filter>Application\Dockyard Engine\Asset Management\Attorneys</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Asset Management\Attorneys\TextureManagerAttorney.h">
+      <Filter>Application\Dockyard Engine\Asset Management\Attorneys</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\Frigate.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Scenes\DemoScene.h">
+      <Filter>Application\User Code\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\SceneAttorney.h">
+      <Filter>Application\Dockyard Engine\Scene Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Time\FreezeTime.h">
+      <Filter>Application\Dockyard Engine\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Changing Scenes\SceneChangeCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Changing Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Changing Scenes\SceneChangeCommandBase.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Changing Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Changing Scenes\SceneChangeNullCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Changing Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Changing Scenes\SceneNull.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Changing Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Scenes\DemoScene2.h">
+      <Filter>Application\User Code\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\SceneManagerAttorney.h">
+      <Filter>Application\Dockyard Engine\Scene Management</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\Bullets\Bullet.h">
+      <Filter>Application\User Code\Objects / Classes\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\Bullets\BulletFactory.h">
+      <Filter>Application\User Code\Objects / Classes\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\Bullets\BulletPool.h">
+      <Filter>Application\User Code\Objects / Classes\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\DockyardAttorney.h">
+      <Filter>Application\Dockyard Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Collisions\CollisionManager.h">
+      <Filter>Application\Dockyard Engine\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\GameObject\-X-ables\Collidable.h">
+      <Filter>Application\Dockyard Engine\GameObject\&lt;X&gt;ables</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Collisions\CollidableGroup.h">
+      <Filter>Application\Dockyard Engine\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\CollisionDeregistrationCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\CollisionRegistrationCommand.h">
+      <Filter>Application\Dockyard Engine\Scene Management\Scene &lt;X&gt;able Registration</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Scene Management\-X-able Attorneys\CollidableAttorney.h">
+      <Filter>Application\Dockyard Engine\Scene Management\&lt;X&gt;able Attorneys</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestCommandBase.h">
+      <Filter>Application\Dockyard Engine\Collisions\Collision Test Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestPairCommand.h">
+      <Filter>Application\Dockyard Engine\Collisions\Collision Test Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestSelfCommand.h">
+      <Filter>Application\Dockyard Engine\Collisions\Collision Test Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Collisions\CollisionDispatch.h">
+      <Filter>Application\Dockyard Engine\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Collisions\CollisionDispatchBase.h">
+      <Filter>Application\Dockyard Engine\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\PlayerCharacter.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Scenes\MainScene.h">
+      <Filter>Application\User Code\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\CharacterAnimator.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\CameraController.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Collisions\Collision Volumes\CollisionVolume.h">
+      <Filter>Application\Dockyard Engine\Collisions\Collision Volumes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Collisions\Collision Volumes\CollisionVolumeBSphere.h">
+      <Filter>Application\Dockyard Engine\Collisions\Collision Volumes</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\Prop.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\GroundPanel.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\WorldPlane.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\Skybox.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\ColorLibrary.h">
+      <Filter>Application\Dockyard Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\DockyardMathTools.h">
+      <Filter>Application\Dockyard Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\House.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\DemoCam.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Sprites\DockyardSprite.h">
+      <Filter>Application\Dockyard Engine\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Asset Management\ImageManager.h">
+      <Filter>Application\Dockyard Engine\Asset Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Asset Management\Attorneys\ImageManagerAttorney.h">
+      <Filter>Application\Dockyard Engine\Asset Management\Attorneys</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\MiniMap.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Sprites\SpriteFont\SpriteFont.h">
+      <Filter>Application\Dockyard Engine\Sprites\SpriteFont</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Sprites\SpriteString\SpriteString.h">
+      <Filter>Application\Dockyard Engine\Sprites\SpriteString</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\Text.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Asset Management\Attorneys\SpriteFontManagerAttorney.h">
+      <Filter>Application\Dockyard Engine\Asset Management\Attorneys</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Asset Management\SpriteFontManager.h">
+      <Filter>Application\Dockyard Engine\Asset Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\CollisionVisualizer.h">
+      <Filter>Application\Dockyard Engine\Debug Tools\Collision Visualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\CollisionVisualizerAttorney.h">
+      <Filter>Application\Dockyard Engine\Debug Tools\Collision Visualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\VisualizeCommand.h">
+      <Filter>Application\Dockyard Engine\Debug Tools\Collision Visualizer</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Debug Tools\Screen Text Log\ScreenLog.h">
+      <Filter>Application\Dockyard Engine\Debug Tools\Screen Text Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Dockyard Engine\Debug Tools\Screen Text Log\ScreenLogAttorney.h">
+      <Filter>Application\Dockyard Engine\Debug Tools\Screen Text Log</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\NPCs\OldMan.h">
+      <Filter>Application\User Code\Objects / Classes\NPCs</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\GameState.h">
+      <Filter>Application\User Code\Objects / Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="User Code\Objects + Classes\NPCs\OldLady.h">
+      <Filter>Application\User Code\Objects / Classes\NPCs</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\dist\GLFW\lib\GLFW_Debug.lib">
+      <Filter>_Libs\GLFW\lib</Filter>
+    </Library>
+    <Library Include="..\dist\SB6\lib\sb6_Debug.lib">
+      <Filter>_Libs\SB6\lib</Filter>
+    </Library>
+    <Library Include="..\dist\File\lib\File_Debug.lib">
+      <Filter>_Libs\File\lib</Filter>
+    </Library>
+    <Library Include="..\dist\Math\lib\MathEngine_Debug.lib">
+      <Filter>_Libs\Math\lib</Filter>
+    </Library>
+    <Library Include="..\dist\AzulCore\lib\AzulCore_Debug.lib">
+      <Filter>_Libs\AzulCore\lib</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
