@@ -2,7 +2,8 @@
 #define _Inputable
 
 #include "SceneRegistrationState.h"
-#include "AzulCore.h"
+#include "SingleKeyEventManager.h"
+#include "InputUtility.h"
 #include <list> // for iterator ref
 #include <map>
 
@@ -20,11 +21,10 @@ public:
 	Inputable& operator = (const Inputable&) = delete;
 	virtual ~Inputable();
 
-	enum EVENT_TYPE { KEY_PRESS, KEY_RELEASE };
+	using EVENT_TYPE = SingleKeyEventManager::EVENT_TYPE;
+	using InputColRef = SingleKeyEventManager::InputColRef;
 
 private:
-	
-	using InputColRef = std::list<Inputable*>::iterator;
 
 	struct RegistrationData
 	{
@@ -34,21 +34,23 @@ private:
 		InputColRef myDeletePtr;
 	};
 
-	using RegDataMap = std::map<AZUL_KEY, RegistrationData>;
+	using RegDataMap = std::map<KEY, RegistrationData>;
 	using RegMapRef = RegDataMap::iterator; // for use in submit registration
 	RegDataMap pressRegData;
+	RegDataMap holdRegData;
 	RegDataMap releaseRegData;
 
-	virtual void KeyPressed(AZUL_KEY) {};
-	virtual void KeyReleased(AZUL_KEY) {};
-	void SceneRegistration(AZUL_KEY k, EVENT_TYPE e, RegistrationData* r);
-	void SceneDeregistration(AZUL_KEY k, EVENT_TYPE e, RegistrationData* r);
+	virtual void KeyPressed(KEY) {};
+	virtual void KeyHeld(KEY) {};
+	virtual void KeyReleased(KEY) {};
+	void SceneRegistration(KEY k, EVENT_TYPE e, RegistrationData* r);
+	void SceneDeregistration(KEY k, EVENT_TYPE e, RegistrationData* r);
 
 	friend class InputableAttorney;
 
 protected:
-	void SubmitInputRegistration(AZUL_KEY k, EVENT_TYPE e);
-	void SubmitInputDeregistration(AZUL_KEY k, EVENT_TYPE e);
+	void SubmitInputRegistration(KEY k, EVENT_TYPE e);
+	void SubmitInputDeregistration(KEY k, EVENT_TYPE e);
 };
 
 #endif

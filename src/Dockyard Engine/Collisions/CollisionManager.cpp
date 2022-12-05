@@ -12,14 +12,12 @@ CollisionManager::CollisionManager()
 
 CollisionManager::~CollisionManager()
 {
-	//Trace::out(" ---- collision manager shutting down ----\n");
 	// delete collidable groups
 	for (std::vector<CollidableGroup*>::iterator it = colGroupCollection.begin(); it != colGroupCollection.end(); it++)
 	{
 		if (*it != nullptr)
 			delete* it;
 	}
-
 	// delete collision test commands
 	for (CollisionTestCommands::iterator it = colTestCmds.begin(); it != colTestCmds.end(); it++)
 	{
@@ -30,24 +28,23 @@ CollisionManager::~CollisionManager()
 void CollisionManager::SetGroupForTypeID(DockyardTypeID idNum)
 {
 	if (colGroupCollection[idNum] == nullptr)
-	{
 		colGroupCollection[idNum] = new CollidableGroup();
-		//Trace::out("created new collidablegroup, #%i\n", idNum);
-	}
-	//else
-		//Trace::out("using existing collidablegroup, #%i\n", idNum);
 }
 
 CollidableGroup* CollisionManager::GetColGroup(DockyardTypeID id)
 {
-	//Trace::out("GetColGroup returning group #%i\n", id);
 	return colGroupCollection[id];
 }
 
 void CollisionManager::ProcessCollisions()
 {
-	for (CollisionTestCommands::iterator it = colTestCmds.begin(); it != colTestCmds.end(); it++)
+	// update group aabbs
+	for (CollidableGroup* colGroup : colGroupCollection)
 	{
-		(*it)->Execute();
+		if (colGroup != nullptr)
+			colGroup->ComputeGroupColData();
 	}
+	// go through each pair or individual test
+	for (CollisionTestCommands::iterator it = colTestCmds.begin(); it != colTestCmds.end(); it++)
+		(*it)->Execute();
 }

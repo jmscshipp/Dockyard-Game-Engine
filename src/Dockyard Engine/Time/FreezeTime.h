@@ -1,16 +1,14 @@
-// FreezeTime
-// Andre Berthiaume, Jan 2016
-
 #ifndef _FreezeTime
 #define _FreezeTime
 
-#include "AzulCore.h"
+#include "InputUtility.h"
+#include <chrono>
 
 class FreezeTime
 {
 private:
-	static const AZUL_KEY FREEZE_KEY = AZUL_KEY::KEY_F10;
-	static const AZUL_KEY SINGLE_FRAME_KEY = AZUL_KEY::KEY_F9;
+	static const KEY FREEZE_KEY = KEY::F10_KEY;
+	static const KEY SINGLE_FRAME_KEY = KEY::F9_KEY;
 
 	static const float DEAD_TIME_THRESHOLD;
 	static const float DEFAULT_FRAME_TIME;
@@ -18,7 +16,10 @@ private:
 	float totalFrozenTime;
 	bool freeze_mode_active;
 
-	bool HackedKeyRelease(AZUL_KEY k);
+	using clock = std::chrono::high_resolution_clock;
+	clock::time_point startTime;
+
+	bool HackedKeyRelease(KEY k);
 	void TestForFreezeKeys();
 
 public:

@@ -1,7 +1,7 @@
 #ifndef _ModelManager
 #define _ModelManager
 
-#include "AzulCore.h"
+#include "GraphicsCore.h"
 #include <map>
 
 class ModelManager
@@ -31,9 +31,7 @@ private:
 	// to allow Dockyard to Delete() singleton
 	friend class ModelManagerAttorney;
 
-	const std::string defaultPath = "Models/"; // need to include '/' for file path
-	Model* defaultSpriteModel;
-	const std::string spriteDefaultKey = "defaultSpriteModel";
+	const std::string defaultPath = "../Assets/Models/"; // need to include '/' for file path
 	std::map<std::string, Model*> loadedModels;
 
 public:

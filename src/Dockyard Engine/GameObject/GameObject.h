@@ -1,7 +1,6 @@
 #ifndef _GameObject
 #define _GameObject
 
-#include "AzulCore.h"
 #include "Updatable.h"
 #include "Drawable.h"
 #include "Alarmable.h"

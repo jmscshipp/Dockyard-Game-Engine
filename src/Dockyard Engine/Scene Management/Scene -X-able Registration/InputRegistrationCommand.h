@@ -3,13 +3,14 @@
 
 #include "SceneRegistrationCommand.h"
 #include "InputableAttorney.h"
+#include "InputUtility.h"
 
 class InputRegistrationCommand : public SceneRegistrationCommand
 {
 public:
 	// big four
 	InputRegistrationCommand() = delete;
-	InputRegistrationCommand(Inputable* thisInputable, AZUL_KEY k, InputableAttorney::EVENT_TYPE e);
+	InputRegistrationCommand(Inputable* thisInputable, KEY k, InputableAttorney::EVENT_TYPE e);
 	InputRegistrationCommand(const InputRegistrationCommand&) = delete;
 	InputRegistrationCommand& operator = (const InputRegistrationCommand&) = delete;
 	virtual ~InputRegistrationCommand() = default;
@@ -19,7 +20,7 @@ public:
 
 private:
 	Inputable* myInputable;
-	AZUL_KEY key;
+	KEY key;
 	InputableAttorney::EVENT_TYPE evnt;
 	InputableAttorney::RegistrationData* regData;
 };

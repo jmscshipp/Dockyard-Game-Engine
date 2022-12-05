@@ -1,6 +1,6 @@
 #include "InputDeregistrationCommand.h"
 
-InputDeregistrationCommand::InputDeregistrationCommand(Inputable* thisInputable, AZUL_KEY k, InputableAttorney::EVENT_TYPE e)
+InputDeregistrationCommand::InputDeregistrationCommand(Inputable* thisInputable, KEY k, InputableAttorney::EVENT_TYPE e)
 	: myInputable(thisInputable),
 	key(k),
 	evnt(e),

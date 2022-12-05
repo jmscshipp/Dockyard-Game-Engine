@@ -12,6 +12,8 @@ class DrawableManager;
 class AlarmableManager;
 class KeyboardEventManager;
 class Camera;
+class TerrainBase;
+class Terrain;
 
 class Scene
 {
@@ -30,6 +32,11 @@ public:
 	void SetCurrentCamera(Camera* cam);
 	Camera* GetCurrentCamera();
 	Camera* GetDefaultOrthoCam();
+	
+	// terrain
+	void SetCurrentTerrain(std::string terrainName);
+	void SetCurrentTerrainToNull();
+	Terrain* GetCurrentTerrain();
 
 	friend class SceneAttorney;
 
@@ -45,6 +52,8 @@ private:
 	KeyboardEventManager* keyboardEventMgr;
 	CollisionManager* collisionMgr;
 	CameraManager* cameraMgr;
+	TerrainBase* currentTerrain;
+	TerrainBase* nullTerrain;
 
 protected:
 	template<typename C1, typename C2>
@@ -57,6 +66,12 @@ protected:
 	void SetCollisionSelf()
 	{
 		collisionMgr->SetCollisionSelf<C>();
+	}
+
+	template<typename C>
+	void SetCollisionTerrain()
+	{
+		collisionMgr->SetCollisionTerrain<C>();
 	}
 };
 

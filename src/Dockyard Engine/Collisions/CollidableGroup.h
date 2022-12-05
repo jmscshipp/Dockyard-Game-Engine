@@ -5,15 +5,16 @@
 
 // forward declaration
 class Collidable;
+class CollisionVolumeAABB;
 
 class CollidableGroup
 {
 public:
 	// big four
-	CollidableGroup() = default;
+	CollidableGroup();
 	CollidableGroup(const CollidableGroup&) = delete;
 	CollidableGroup& operator = (const CollidableGroup&) = delete;
-	virtual ~CollidableGroup() = default;
+	virtual ~CollidableGroup();
 
 	using CollidableCollection = std::list<Collidable*>;
 	using CollidableCollectionRef = std::list<Collidable*>::iterator;
@@ -21,9 +22,13 @@ public:
 	void Register(Collidable* c, CollidableCollectionRef& ref);
 	void Deregister(const CollidableCollectionRef& ref);
 	const CollidableCollection& GetColliderCollection();
+	const CollisionVolumeAABB& GetGroupCollider();
+
+	void ComputeGroupColData();
 
 private:
 	CollidableCollection collidableCol;
+	CollisionVolumeAABB* groupCollider;
 };
 
 #endif

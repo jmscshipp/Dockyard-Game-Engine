@@ -7,6 +7,7 @@
 // Make the assumption of c-char strings, not UNICODE
 // 32 bit files, not supporting 64 bits
 
+
 enum FileMode
 {
    FILE_READ = 0xA0000000,

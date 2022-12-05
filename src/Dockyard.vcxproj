@@ -5,128 +5,386 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Win32">
+      <Configuration>Profile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|x64">
+      <Configuration>Profile</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3167A812-5D2C-4EE9-ACFD-F0E959384755}</ProjectGuid>
-    <Keyword>Win32Proj</Keyword>
-    <RootNamespace>spinnycube</RootNamespace>
     <ProjectName>Dockyard Engine</ProjectName>
+    <ProjectGuid>{06EDC280-1187-4614-A248-E640C095FA6B}</ProjectGuid>
+    <RootNamespace>Tutorial01</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|X64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|X64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|X64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)include;$(SolutionDir)extern\glfw-2.7.6\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)lib;$(LibraryPath)</LibraryPath>
-    <TargetName>$(ProjectName)_Debug</TargetName>
-    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
-    <IntDir>$(Configuration)\</IntDir>
-    <GenerateManifest>false</GenerateManifest>
-    <EnableManagedIncrementalBuild>true</EnableManagedIncrementalBuild>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)include;$(SolutionDir)extern\glfw-2.7.6\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)lib;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)bin\</OutDir>
-    <IntDir>$(ProjectName)_$(Configuration)\</IntDir>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|X64'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|X64'">
+    <LinkIncremental>false</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;WINDOWS_TARGET_PLATFORM="$(TargetPlatformVersion)";MEMORY_LOGS_DIR=R"($(SolutionDir))";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)dist\Math\include;$(SolutionDir)dist\SB6\include;$(SolutionDir)dist\GLFW\include;$(SolutionDir)dist\File\include;$(SolutionDir)dist\AzulCore\include;$(SolutionDir)dist\MemTracker;$(SolutionDir)src\Dockyard Engine;$(SolutionDir)src\Dockyard Engine\Asset Management;$(SolutionDir)src\Dockyard Engine\Asset Management\Attorneys;$(SolutionDir)src\Dockyard Engine\Camera Manager;$(SolutionDir)src\Dockyard Engine\Time;$(SolutionDir)src\Dockyard Engine\GameObject;$(SolutionDir)src\Dockyard Engine\GameObject\-X-ables;$(SolutionDir)src\Dockyard Engine\GameObject\Commands;$(SolutionDir)src\Dockyard Engine\Debug Tools\Collision Visualizer;$(SolutionDir)src\Dockyard Engine\Debug Tools\Screen Text Log;$(SolutionDir)src\Dockyard Engine\Scene Management;$(SolutionDir)src\Dockyard Engine\Scene Management\Changing Scenes;$(SolutionDir)src\Dockyard Engine\Scene Management\Scene -X-able Registration;$(SolutionDir)src\Dockyard Engine\Scene Management\Scene -X-able Registration\Scene Registration Broker;$(SolutionDir)src\Dockyard Engine\Scene Management\-X-able Attorneys;$(SolutionDir)src\Dockyard Engine\Scene Management\-X-able Managers;$(SolutionDir)src\Dockyard Engine\Collisions;$(SolutionDir)src\Dockyard Engine\Collisions\Collision Test Commands;$(SolutionDir)src\Dockyard Engine\Collisions\Collision Volumes;$(SolutionDir)src\Dockyard Engine\Sprites;$(SolutionDir)src\Dockyard Engine\Sprites\SpriteString;$(SolutionDir)src\Dockyard Engine\Sprites\SpriteFont;$(SolutionDir)src\User Code;$(SolutionDir)src\User Code\Scenes;$(SolutionDir)src\User Code\Objects + Classes;$(SolutionDir)src\User Code\Objects + Classes\Bullets;$(SolutionDir)src\User Code\Objects + Classes\NPCs</AdditionalIncludeDirectories>
-      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <TreatWarningAsError>true</TreatWarningAsError>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <StringPooling>false</StringPooling>
-      <MinimalRebuild>false</MinimalRebuild>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <SDLCheck>
-      </SDLCheck>
-      <BufferSecurityCheck>false</BufferSecurityCheck>
-      <EnableParallelCodeGeneration>false</EnableParallelCodeGeneration>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <OpenMPSupport>false</OpenMPSupport>
-      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
-      <DisableSpecificWarnings>
-      </DisableSpecificWarnings>
-      <ForcedIncludeFiles>Framework.h</ForcedIncludeFiles>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;PROFILE;_WINDOWS;_WIN32_WINNT=0x0600;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <AdditionalIncludeDirectories>$(SolutionDir)dist\Math\include;$(SolutionDir)dist\DXTex\include;$(SolutionDir)dist\File\include;$(SolutionDir)src;$(SolutionDir)src\Graphics Backbone\GPU Control;$(SolutionDir)src\Graphics Backbone\GraphicsObjects;$(SolutionDir)src\Graphics Backbone\Main DX APP;$(SolutionDir)src\Graphics Backbone\Models;$(SolutionDir)src\Graphics Backbone\Shaders;$(SolutionDir)src\Graphics Backbone\Graphics Assets;$(SolutionDir)src\Graphics Backbone\Tools;$(SolutionDir)src\Graphics Backbone\Windowing Control;$(SolutionDir)src\Dockyard Engine;$(SolutionDir)src\Dockyard Engine\Asset Management;$(SolutionDir)src\Dockyard Engine\Asset Management\Attorneys;$(SolutionDir)src\Dockyard Engine\Camera Manager;$(SolutionDir)src\Dockyard Engine\Collisions;$(SolutionDir)src\Dockyard Engine\Collisions\Collision Test Commands;$(SolutionDir)src\Dockyard Engine\Collisions\Collision Volumes;$(SolutionDir)src\Dockyard Engine\Debug Tools\Collision Visualizer;$(SolutionDir)src\Dockyard Engine\Debug Tools\Collision Visualizer\Commands;$(SolutionDir)src\Dockyard Engine\Debug Tools\Collision Visualizer\Commands\Command Pool;$(SolutionDir)src\Dockyard Engine\Debug Tools\Screen Text Log;$(SolutionDir)src\Dockyard Engine\Debug Tools\Screen Text Log\Message Pool;$(SolutionDir)src\Dockyard Engine\GameObject;$(SolutionDir)src\Dockyard Engine\GameObject\Commands;$(SolutionDir)src\Dockyard Engine\GameObject\-X-ables;$(SolutionDir)src\Dockyard Engine\Terrain;$(SolutionDir)src\Dockyard Engine\Scene Management;$(SolutionDir)src\Dockyard Engine\Scene Management\Changing Scenes;$(SolutionDir)src\Dockyard Engine\Scene Management\Scene -X-able Registration;$(SolutionDir)src\Dockyard Engine\Scene Management\Scene -X-able Registration\Scene Registration Broker;$(SolutionDir)src\Dockyard Engine\Scene Management\-X-able Attorneys;$(SolutionDir)src\Dockyard Engine\Scene Management\-X-able Managers;$(SolutionDir)src\Dockyard Engine\Sprites;$(SolutionDir)src\Dockyard Engine\Sprites\SpriteFont;$(SolutionDir)src\Dockyard Enginet\Sprites\SpriteString;$(SolutionDir)src\Dockyard Engine\Time;$(SolutionDir)src\Dockyard Resources;$(SolutionDir)src\User Code\Objects + Classes\Shader Experimentation;$(SolutionDir)src\User Code\Objects + Classes\Game Demo;$(SolutionDir)src\User Code\Objects + Classes\Game Demo\NPCs;$(SolutionDir)src\User Code\Objects + Classes\Playground Scene;$(SolutionDir)src\User Code\Scenes\Game Demo;$(SolutionDir)src\User Code\Scenes\Shader Experimentation;$(SolutionDir)src\User Code\Scenes\Playground Scene;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ForcedIncludeFiles>$(SolutionDir)dist\MemTracker\framework.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;dxguid.lib;winmm.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <IgnoreAllDefaultLibraries>
-      </IgnoreAllDefaultLibraries>
-      <IgnoreSpecificDefaultLibraries>MSVCRTD.lib</IgnoreSpecificDefaultLibraries>
-      <ShowProgress>NotSet</ShowProgress>
-      <LinkStatus>
-      </LinkStatus>
-      <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
-      <AdditionalDependencies>xmllite.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LargeAddressAware>true</LargeAddressAware>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
+      <IgnoreSpecificDefaultLibraries>libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
     </Link>
+    <Manifest>
+      <EnableDPIAwareness>PerMonitorHighDPIAware</EnableDPIAwareness>
+    </Manifest>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <OpenMPSupport>false</OpenMPSupport>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;PROFILE;_WINDOWS;_WIN32_WINNT=0x0600;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <AdditionalIncludeDirectories>$(SolutionDir)/dist/File/include;$(SolutionDir)/dist/DXTex/include;$(SolutionDir)/dist/Math/include;$(SolutionDir)/dist/MemTracker;$(SolutionDir)/src;$(SolutionDir)/src/Graphics Backbone;$(SolutionDir)/src/Graphics Backbone/GPU Control;$(SolutionDir)/src/Graphics Backbone/GraphicsObjects;$(SolutionDir)/src/Graphics Backbone/Main DX APP;$(SolutionDir)/src/Graphics Backbone/Models;$(SolutionDir)/src/Graphics Backbone/Shaders;$(SolutionDir)/src/Graphics Backbone/Texture;$(SolutionDir)/src/Graphics Backbone/Tools;$(SolutionDir)/src/Graphics Backbone/Windowing Control;$(SolutionDir)/src/Dockyard Engine;$(SolutionDir)/src/Dockyard Engine/Asset Management;$(SolutionDir)/src/Dockyard Engine/Asset Management/Attorneys;$(SolutionDir)/src/Dockyard Engine/Camera Manager;$(SolutionDir)/src/Dockyard Engine/Collisions;$(SolutionDir)/src/Dockyard Engine/Collisions/Collision Test Commands;$(SolutionDir)/src/Dockyard Engine/Collisions/Collision Volumes;$(SolutionDir)/src/Dockyard Engine/Debug Tools;$(SolutionDir)/src/Dockyard Engine/Debug Tools/Collision Visualizer;$(SolutionDir)/src/Dockyard Engine/Debug Tools/Collision Visualizer/Commands;$(SolutionDir)/src/Dockyard Engine/Debug Tools/Collision Visualizer/Commands/Command Pool;$(SolutionDir)/src/Dockyard Engine/Debug Tools/Screen Text Log;$(SolutionDir)/src/Dockyard Engine/Debug Tools/Screen Text Log/Message Pool;$(SolutionDir)/src/Dockyard Engine/GameObject;$(SolutionDir)/src/Dockyard Engine/GameObject/Commands;$(SolutionDir)/src/Dockyard Engine/GameObject/-X-ables;$(SolutionDir)/src/Dockyard Engine/Scene Management;$(SolutionDir)/src/Dockyard Engine/Scene Management/Changing Scenes;$(SolutionDir)/src/Dockyard Engine/Scene Management/Scene -X-able Registration;$(SolutionDir)/src/Dockyard Engine/Scene Management/Scene -X-able Registration/Scene Registration Broker;$(SolutionDir)/src/Dockyard Engine/Scene Management/-X-able Attorneys;$(SolutionDir)/src/Dockyard Engine/Scene Management/-X-able Managers;$(SolutionDir)/src/Dockyard Engine/Sprites;$(SolutionDir)/src/Dockyard Engine/Sprites/SpriteFont;$(SolutionDir)/src/Dockyard Engine/Sprites/SpriteString;$(SolutionDir)/src/Dockyard Engine/Time;$(SolutionDir)/src/User Code/Objects + Classes;$(SolutionDir)/src/User Code/Scenes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>"Framework.h"</ForcedIncludeFiles>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;dxguid.lib;winmm.lib;comctl32.lib;MathEngine_Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LargeAddressAware>true</LargeAddressAware>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
+      <AdditionalLibraryDirectories>$(SolutionDir)/dist/Math/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Manifest>
+      <EnableDPIAwareness>PerMonitorHighDPIAware</EnableDPIAwareness>
+    </Manifest>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <FxCompile>
+      <EntryPointName>wWinMain</EntryPointName>
+    </FxCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <OpenMPSupport>false</OpenMPSupport>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_WIN32_WINNT=0x0600;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;;dxguid.lib;winmm.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LargeAddressAware>true</LargeAddressAware>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
     </Link>
+    <Manifest>
+      <EnableDPIAwareness>PerMonitorHighDPIAware</EnableDPIAwareness>
+    </Manifest>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|X64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <OpenMPSupport>false</OpenMPSupport>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_WIN32_WINNT=0x0600;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;dxguid.lib;winmm.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LargeAddressAware>true</LargeAddressAware>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
+    </Link>
+    <Manifest>
+      <EnableDPIAwareness>PerMonitorHighDPIAware</EnableDPIAwareness>
+    </Manifest>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <OpenMPSupport>false</OpenMPSupport>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;PROFILE;_WINDOWS;_WIN32_WINNT=0x0600;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;dxguid.lib;winmm.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LargeAddressAware>true</LargeAddressAware>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
+    </Link>
+    <Manifest>
+      <EnableDPIAwareness>PerMonitorHighDPIAware</EnableDPIAwareness>
+    </Manifest>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|X64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <OpenMPSupport>false</OpenMPSupport>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;PROFILE;_WINDOWS;_WIN32_WINNT=0x0600;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;dxguid.lib;winmm.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LargeAddressAware>true</LargeAddressAware>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <DelayLoadDLLs>%(DelayLoadDLLs)</DelayLoadDLLs>
+    </Link>
+    <Manifest>
+      <EnableDPIAwareness>PerMonitorHighDPIAware</EnableDPIAwareness>
+    </Manifest>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Dockyard Engine\Asset Management\ImageManager.cpp" />
     <ClCompile Include="Dockyard Engine\Asset Management\ModelManager.cpp" />
     <ClCompile Include="Dockyard Engine\Asset Management\ShaderManager.cpp" />
     <ClCompile Include="Dockyard Engine\Asset Management\SpriteFontManager.cpp" />
+    <ClCompile Include="Dockyard Engine\Asset Management\TerrainManager.cpp" />
     <ClCompile Include="Dockyard Engine\Asset Management\TextureManager.cpp" />
     <ClCompile Include="Dockyard Engine\Camera Manager\CameraManager.cpp" />
     <ClCompile Include="Dockyard Engine\Collisions\CollidableGroup.cpp" />
     <ClCompile Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestPairCommand.cpp" />
     <ClCompile Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestSelfCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestTerrainCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Collisions\Collision Volumes\CollisionVolumeAABB.cpp" />
     <ClCompile Include="Dockyard Engine\Collisions\Collision Volumes\CollisionVolumeBSphere.cpp" />
+    <ClCompile Include="Dockyard Engine\Collisions\Collision Volumes\CollisionVolumeOBB.cpp" />
     <ClCompile Include="Dockyard Engine\Collisions\CollisionManager.cpp" />
     <ClCompile Include="Dockyard Engine\Debug Tools\Collision Visualizer\CollisionVisualizer.cpp" />
-    <ClCompile Include="Dockyard Engine\Debug Tools\Collision Visualizer\VisualizeCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\Command Pool\VisualizeCommandPool.cpp" />
+    <ClCompile Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\VisualizeCommandAABB.cpp" />
+    <ClCompile Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\VisualizeCommandBoxAtPoint.cpp" />
+    <ClCompile Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\VisualizeCommandBSphere.cpp" />
+    <ClCompile Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\VisualizeCommandLine.cpp" />
+    <ClCompile Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\VisualizeCommandOBB.cpp" />
+    <ClCompile Include="Dockyard Engine\Debug Tools\Screen Text Log\Message Pool\ScreenLogMessagePool.cpp" />
     <ClCompile Include="Dockyard Engine\Debug Tools\Screen Text Log\ScreenLog.cpp" />
     <ClCompile Include="Dockyard Engine\Dockyard.cpp" />
     <ClCompile Include="Dockyard Engine\GameObject\-X-ables\Alarmable.cpp" />
@@ -137,6 +395,7 @@
     <ClCompile Include="Dockyard Engine\GameObject\Commands\GameObjectEntryCommand.cpp" />
     <ClCompile Include="Dockyard Engine\GameObject\Commands\GameObjectExitCommand.cpp" />
     <ClCompile Include="Dockyard Engine\GameObject\GameObject.cpp" />
+    <ClCompile Include="Dockyard Engine\InputUtility.cpp" />
     <ClCompile Include="Dockyard Engine\main.cpp" />
     <ClCompile Include="Dockyard Engine\Scene Management\-X-able Managers\AlarmableManager.cpp" />
     <ClCompile Include="Dockyard Engine\Scene Management\-X-able Managers\DrawableManager.cpp" />
@@ -144,79 +403,79 @@
     <ClCompile Include="Dockyard Engine\Scene Management\-X-able Managers\SingleKeyEventManager.cpp" />
     <ClCompile Include="Dockyard Engine\Scene Management\-X-able Managers\UpdatableManager.cpp" />
     <ClCompile Include="Dockyard Engine\Scene Management\Changing Scenes\SceneChangeCommand.cpp" />
-    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\AlarmDeregistrationCommand.cpp" />
-    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\AlarmRegistrationCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\AlarmDeregistrationCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\AlarmRegistrationCommand.cpp" />
     <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\CollisionDeregistrationCommand.cpp" />
     <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\CollisionRegistrationCommand.cpp" />
-    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\DrawDeregistrationCommand.cpp" />
-    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\DrawRegistrationCommand.cpp" />
-    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\InputDeregistrationCommand.cpp" />
-    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\InputRegistrationCommand.cpp" />
-    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\Scene Registration Broker\SceneRegistrationBroker.cpp" />
-    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\SceneRegistrationCommand.cpp" />
-    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\UpdateDeregistrationCommand.cpp" />
-    <ClCompile Include="Dockyard Engine\Scene Management\Scene -x-able registration\UpdateRegistrationCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\DrawDeregistrationCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\DrawRegistrationCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\InputDeregistrationCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\InputRegistrationCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\Scene Registration Broker\SceneRegistrationBroker.cpp" />
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\SceneRegistrationCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\UpdateDeregistrationCommand.cpp" />
+    <ClCompile Include="Dockyard Engine\Scene Management\Scene -X-able Registration\UpdateRegistrationCommand.cpp" />
     <ClCompile Include="Dockyard Engine\Scene Management\Scene.cpp" />
     <ClCompile Include="Dockyard Engine\Scene Management\SceneManager.cpp" />
     <ClCompile Include="Dockyard Engine\Sprites\DockyardSprite.cpp" />
     <ClCompile Include="Dockyard Engine\Sprites\SpriteFont\SpriteFont.cpp" />
     <ClCompile Include="Dockyard Engine\Sprites\SpriteString\SpriteString.cpp" />
+    <ClCompile Include="Dockyard Engine\Terrain\Terrain.cpp" />
     <ClCompile Include="Dockyard Engine\Time\FreezeTime.cpp" />
     <ClCompile Include="Dockyard Engine\Time\TimeManager.cpp" />
     <ClCompile Include="Dockyard Resources\GameEnd.cpp" />
     <ClCompile Include="Dockyard Resources\GameInitialize.cpp" />
     <ClCompile Include="Dockyard Resources\LoadResources.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\Bullets\Bullet.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\Bullets\BulletFactory.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\Bullets\BulletPool.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\CameraController.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\CharacterAnimator.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\DemoCam.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\Frigate.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\GameState.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\GroundPanel.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\House.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\MiniMap.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\NPCs\OldLady.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\NPCs\OldMan.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\PlayerCharacter.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\Prop.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\Skybox.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\Text.cpp" />
-    <ClCompile Include="User Code\Objects + Classes\WorldPlane.cpp" />
-    <ClCompile Include="User Code\Scenes\DemoScene.cpp" />
-    <ClCompile Include="User Code\Scenes\DemoScene2.cpp" />
-    <ClCompile Include="User Code\Scenes\MainScene.cpp" />
+    <ClCompile Include="Graphics Backbone\GPU Control\GPUController.cpp" />
+    <ClCompile Include="Graphics Backbone\Graphics Assets\Image.cpp" />
+    <ClCompile Include="Graphics Backbone\Graphics Assets\Rect.cpp" />
+    <ClCompile Include="Graphics Backbone\Graphics Assets\Texture.cpp" />
+    <ClCompile Include="Graphics Backbone\GraphicsObjects\GraphicsObject_Base.cpp" />
+    <ClCompile Include="Graphics Backbone\GraphicsObjects\GraphicsObject_Cartoon.cpp" />
+    <ClCompile Include="Graphics Backbone\GraphicsObjects\GraphicsObject_ColorFlat.cpp" />
+    <ClCompile Include="Graphics Backbone\GraphicsObjects\GraphicsObject_ColorLight.cpp" />
+    <ClCompile Include="Graphics Backbone\GraphicsObjects\GraphicsObject_Sprite.cpp" />
+    <ClCompile Include="Graphics Backbone\GraphicsObjects\GraphicsObject_TextureFlat.cpp" />
+    <ClCompile Include="Graphics Backbone\GraphicsObjects\GraphicsObject_TextureLight.cpp" />
+    <ClCompile Include="Graphics Backbone\GraphicsObjects\GraphicsObject_TextureOutlined.cpp" />
+    <ClCompile Include="Graphics Backbone\Models\FlatPlane.cpp" />
+    <ClCompile Include="Graphics Backbone\Models\MeshSeparator.cpp" />
+    <ClCompile Include="Graphics Backbone\Models\Model.cpp" />
+    <ClCompile Include="Graphics Backbone\Models\ModelTools.cpp" />
+    <ClCompile Include="Graphics Backbone\Models\Skybox.cpp" />
+    <ClCompile Include="Graphics Backbone\Shaders\GraphicsObject_Water.cpp" />
+    <ClCompile Include="Graphics Backbone\Shaders\Shader.cpp" />
+    <ClCompile Include="Graphics Backbone\Shaders\ShaderCartoon.cpp" />
+    <ClCompile Include="Graphics Backbone\Shaders\ShaderColor.cpp" />
+    <ClCompile Include="Graphics Backbone\Shaders\ShaderColorLight.cpp" />
+    <ClCompile Include="Graphics Backbone\Shaders\ShaderOutline.cpp" />
+    <ClCompile Include="Graphics Backbone\Shaders\ShaderTexture.cpp" />
+    <ClCompile Include="Graphics Backbone\Shaders\ShaderTextureLight.cpp" />
+    <ClCompile Include="Graphics Backbone\Shaders\ShaderWater.cpp" />
+    <ClCompile Include="Graphics Backbone\Tools\Camera.cpp" />
+    <ClCompile Include="Graphics Backbone\Windowing Control\WindowController.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Game Demo\CameraController.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Game Demo\GameState.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Game Demo\House.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Game Demo\MiniMap.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Game Demo\NPCs\OldLady.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Game Demo\NPCs\OldMan.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Game Demo\Ocean.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Game Demo\PlayerCharacter.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Game Demo\Prop.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Game Demo\Text.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Playground Scene\DemoCam.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Playground Scene\dxdemoperson.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Playground Scene\Frigate.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Playground Scene\Ground.cpp" />
+    <ClCompile Include="User Code\Objects + Classes\Shader Experimentation\ExperimentCharacter.cpp" />
+    <ClCompile Include="User Code\Scenes\Game Demo\MainScene.cpp" />
+    <ClCompile Include="User Code\Scenes\Playground Scene\DemoScene.cpp" />
+    <ClCompile Include="User Code\Scenes\Shader Experimentation\ShaderExperimentScene.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\dist\AzulCore\include\AzulCore.h" />
-    <ClInclude Include="..\dist\AzulCore\include\AzulFileHdr.h" />
-    <ClInclude Include="..\dist\AzulCore\include\AzulHelper.h" />
-    <ClInclude Include="..\dist\AzulCore\include\Camera.h" />
-    <ClInclude Include="..\dist\AzulCore\include\DebugOut.h" />
-    <ClInclude Include="..\dist\AzulCore\include\Engine.h" />
-    <ClInclude Include="..\dist\AzulCore\include\GpuVertTypes.h" />
-    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject.h" />
-    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_ColorByPosition.h" />
-    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_ColorNoTexture.h" />
-    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_ColorNoTextureLight.h" />
-    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_Sprite.h" />
-    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_SpriteBox.h" />
-    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_TextureFlat.h" />
-    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_TextureLight.h" />
-    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_WireframeAutoColor.h" />
-    <ClInclude Include="..\dist\AzulCore\include\GraphicsObject_WireframeConstantColor.h" />
-    <ClInclude Include="..\dist\AzulCore\include\Image.h" />
-    <ClInclude Include="..\dist\AzulCore\include\Keyboard.h" />
-    <ClInclude Include="..\dist\AzulCore\include\LibrarySetup.h" />
-    <ClInclude Include="..\dist\AzulCore\include\Model.h" />
-    <ClInclude Include="..\dist\AzulCore\include\Mouse.h" />
-    <ClInclude Include="..\dist\AzulCore\include\Rect.h" />
-    <ClInclude Include="..\dist\AzulCore\include\ShaderObject.h" />
-    <ClInclude Include="..\dist\AzulCore\include\Texture.h" />
-    <ClInclude Include="..\dist\AzulCore\include\TextureTGA.h" />
+    <ClInclude Include="..\dist\DXTex\include\DirectXTex.h" />
     <ClInclude Include="..\dist\File\include\File.h" />
-    <ClInclude Include="..\dist\GLFW\include\GL\glfw.h" />
     <ClInclude Include="..\dist\Math\include\Align16.h" />
     <ClInclude Include="..\dist\Math\include\Constants.h" />
     <ClInclude Include="..\dist\Math\include\Enum.h" />
@@ -228,47 +487,46 @@
     <ClInclude Include="..\dist\Math\include\Util.h" />
     <ClInclude Include="..\dist\Math\include\Vect.h" />
     <ClInclude Include="..\dist\Math\include\VectApp.h" />
-    <ClInclude Include="..\dist\SB6\include\arcball.h" />
-    <ClInclude Include="..\dist\SB6\include\GL\gl3w.h" />
-    <ClInclude Include="..\dist\SB6\include\GL\glcorearb.h" />
-    <ClInclude Include="..\dist\SB6\include\GL\glext.h" />
-    <ClInclude Include="..\dist\SB6\include\GL\glxext.h" />
-    <ClInclude Include="..\dist\SB6\include\GL\wglext.h" />
-    <ClInclude Include="..\dist\SB6\include\object.h" />
-    <ClInclude Include="..\dist\SB6\include\sb6.h" />
-    <ClInclude Include="..\dist\SB6\include\sb6ext.h" />
-    <ClInclude Include="..\dist\SB6\include\sb6ktx.h" />
-    <ClInclude Include="..\dist\SB6\include\sb6mfile.h" />
-    <ClInclude Include="..\dist\SB6\include\shader.h" />
-    <ClInclude Include="..\dist\SB6\include\vmath.h" />
     <ClInclude Include="Dockyard Engine\Asset Management\Attorneys\ImageManagerAttorney.h" />
     <ClInclude Include="Dockyard Engine\Asset Management\Attorneys\ModelManagerAttorney.h" />
     <ClInclude Include="Dockyard Engine\Asset Management\Attorneys\ShaderManagerAttorney.h" />
     <ClInclude Include="Dockyard Engine\Asset Management\Attorneys\SpriteFontManagerAttorney.h" />
+    <ClInclude Include="Dockyard Engine\Asset Management\Attorneys\TerrainManagerAttorney.h" />
     <ClInclude Include="Dockyard Engine\Asset Management\Attorneys\TextureManagerAttorney.h" />
     <ClInclude Include="Dockyard Engine\Asset Management\ImageManager.h" />
     <ClInclude Include="Dockyard Engine\Asset Management\ModelManager.h" />
     <ClInclude Include="Dockyard Engine\Asset Management\ShaderManager.h" />
     <ClInclude Include="Dockyard Engine\Asset Management\SpriteFontManager.h" />
+    <ClInclude Include="Dockyard Engine\Asset Management\TerrainManager.h" />
     <ClInclude Include="Dockyard Engine\Asset Management\TextureManager.h" />
     <ClInclude Include="Dockyard Engine\Camera Manager\CameraManager.h" />
     <ClInclude Include="Dockyard Engine\Collisions\CollidableGroup.h" />
     <ClInclude Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestCommandBase.h" />
     <ClInclude Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestPairCommand.h" />
     <ClInclude Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestSelfCommand.h" />
+    <ClInclude Include="Dockyard Engine\Collisions\Collision Test Commands\CollisionTestTerrainCommand.h" />
     <ClInclude Include="Dockyard Engine\Collisions\Collision Volumes\CollisionVolume.h" />
+    <ClInclude Include="Dockyard Engine\Collisions\Collision Volumes\CollisionVolumeAABB.h" />
+    <ClInclude Include="Dockyard Engine\Collisions\Collision Volumes\CollisionVolumeBBBase.h" />
     <ClInclude Include="Dockyard Engine\Collisions\Collision Volumes\CollisionVolumeBSphere.h" />
+    <ClInclude Include="Dockyard Engine\Collisions\Collision Volumes\CollisionVolumeOBB.h" />
     <ClInclude Include="Dockyard Engine\Collisions\CollisionDispatch.h" />
     <ClInclude Include="Dockyard Engine\Collisions\CollisionDispatchBase.h" />
     <ClInclude Include="Dockyard Engine\Collisions\CollisionManager.h" />
     <ClInclude Include="Dockyard Engine\ColorLibrary.h" />
     <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\CollisionVisualizer.h" />
     <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\CollisionVisualizerAttorney.h" />
-    <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\VisualizeCommand.h" />
+    <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\Command Pool\VisualizeCommandPool.h" />
+    <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\VisualizeCommandAABB.h" />
+    <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\VisualizeCommandBase.h" />
+    <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\VisualizeCommandBoxAtPoint.h" />
+    <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\VisualizeCommandBSphere.h" />
+    <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\VisualizeCommandLine.h" />
+    <ClInclude Include="Dockyard Engine\Debug Tools\Collision Visualizer\Commands\VisualizeCommandOBB.h" />
+    <ClInclude Include="Dockyard Engine\Debug Tools\Screen Text Log\Message Pool\ScreenLogMessagePool.h" />
     <ClInclude Include="Dockyard Engine\Debug Tools\Screen Text Log\ScreenLog.h" />
     <ClInclude Include="Dockyard Engine\Debug Tools\Screen Text Log\ScreenLogAttorney.h" />
     <ClInclude Include="Dockyard Engine\Dockyard.h" />
-    <ClInclude Include="Dockyard Engine\DockyardAttorney.h" />
     <ClInclude Include="Dockyard Engine\DockyardMathTools.h" />
     <ClInclude Include="Dockyard Engine\GameObject\-X-ables\Alarmable.h" />
     <ClInclude Include="Dockyard Engine\GameObject\-X-ables\Collidable.h" />
@@ -279,6 +537,7 @@
     <ClInclude Include="Dockyard Engine\GameObject\Commands\GameObjectExitCommand.h" />
     <ClInclude Include="Dockyard Engine\GameObject\GameObject.h" />
     <ClInclude Include="Dockyard Engine\GameObject\GameObjectAttorney.h" />
+    <ClInclude Include="Dockyard Engine\InputUtility.h" />
     <ClInclude Include="Dockyard Engine\Scene Management\-X-able Attorneys\AlarmableAttorney.h" />
     <ClInclude Include="Dockyard Engine\Scene Management\-X-able Attorneys\CollidableAttorney.h" />
     <ClInclude Include="Dockyard Engine\Scene Management\-X-able Attorneys\DrawableAttorney.h" />
@@ -293,19 +552,19 @@
     <ClInclude Include="Dockyard Engine\Scene Management\Changing Scenes\SceneChangeCommandBase.h" />
     <ClInclude Include="Dockyard Engine\Scene Management\Changing Scenes\SceneChangeNullCommand.h" />
     <ClInclude Include="Dockyard Engine\Scene Management\Changing Scenes\SceneNull.h" />
-    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\AlarmDeregistrationCommand.h" />
-    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\AlarmRegistrationCommand.h" />
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\AlarmDeregistrationCommand.h" />
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\AlarmRegistrationCommand.h" />
     <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\CollisionDeregistrationCommand.h" />
     <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\CollisionRegistrationCommand.h" />
-    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\DrawDeregistrationCommand.h" />
-    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\DrawRegistrationCommand.h" />
-    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\InputDeregistrationCommand.h" />
-    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\InputRegistrationCommand.h" />
-    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\Scene Registration Broker\SceneRegistrationBroker.h" />
-    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\SceneRegistrationCommand.h" />
-    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\SceneRegistrationState.h" />
-    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\UpdateDeregistrationCommand.h" />
-    <ClInclude Include="Dockyard Engine\Scene Management\Scene -x-able registration\UpdateRegistrationCommand.h" />
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\DrawDeregistrationCommand.h" />
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\DrawRegistrationCommand.h" />
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\InputDeregistrationCommand.h" />
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\InputRegistrationCommand.h" />
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\Scene Registration Broker\SceneRegistrationBroker.h" />
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\SceneRegistrationCommand.h" />
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\SceneRegistrationState.h" />
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\UpdateDeregistrationCommand.h" />
+    <ClInclude Include="Dockyard Engine\Scene Management\Scene -X-able Registration\UpdateRegistrationCommand.h" />
     <ClInclude Include="Dockyard Engine\Scene Management\Scene.h" />
     <ClInclude Include="Dockyard Engine\Scene Management\SceneAttorney.h" />
     <ClInclude Include="Dockyard Engine\Scene Management\SceneManager.h" />
@@ -313,39 +572,132 @@
     <ClInclude Include="Dockyard Engine\Sprites\DockyardSprite.h" />
     <ClInclude Include="Dockyard Engine\Sprites\SpriteFont\SpriteFont.h" />
     <ClInclude Include="Dockyard Engine\Sprites\SpriteString\SpriteString.h" />
+    <ClInclude Include="Dockyard Engine\Terrain\NullTerrain.h" />
+    <ClInclude Include="Dockyard Engine\Terrain\Terrain.h" />
+    <ClInclude Include="Dockyard Engine\Terrain\TerrainBase.h" />
     <ClInclude Include="Dockyard Engine\Time\FreezeTime.h" />
     <ClInclude Include="Dockyard Engine\Time\TimeManager.h" />
     <ClInclude Include="Dockyard Engine\Time\TimeManagerAttorney.h" />
-    <ClInclude Include="User Code\Objects + Classes\Bullets\Bullet.h" />
-    <ClInclude Include="User Code\Objects + Classes\Bullets\BulletFactory.h" />
-    <ClInclude Include="User Code\Objects + Classes\Bullets\BulletPool.h" />
-    <ClInclude Include="User Code\Objects + Classes\CameraController.h" />
-    <ClInclude Include="User Code\Objects + Classes\CharacterAnimator.h" />
-    <ClInclude Include="User Code\Objects + Classes\DemoCam.h" />
-    <ClInclude Include="User Code\Objects + Classes\Frigate.h" />
-    <ClInclude Include="User Code\Objects + Classes\GameState.h" />
-    <ClInclude Include="User Code\Objects + Classes\GroundPanel.h" />
-    <ClInclude Include="User Code\Objects + Classes\House.h" />
-    <ClInclude Include="User Code\Objects + Classes\MiniMap.h" />
-    <ClInclude Include="User Code\Objects + Classes\NPCs\OldLady.h" />
-    <ClInclude Include="User Code\Objects + Classes\NPCs\OldMan.h" />
-    <ClInclude Include="User Code\Objects + Classes\PlayerCharacter.h" />
-    <ClInclude Include="User Code\Objects + Classes\Prop.h" />
-    <ClInclude Include="User Code\Objects + Classes\Skybox.h" />
-    <ClInclude Include="User Code\Objects + Classes\Text.h" />
-    <ClInclude Include="User Code\Objects + Classes\WorldPlane.h" />
-    <ClInclude Include="User Code\Scenes\DemoScene.h" />
-    <ClInclude Include="User Code\Scenes\DemoScene2.h" />
-    <ClInclude Include="User Code\Scenes\MainScene.h" />
+    <ClInclude Include="Graphics Backbone\GPU Control\GPUController.h" />
+    <ClInclude Include="Graphics Backbone\Graphics Assets\Image.h" />
+    <ClInclude Include="Graphics Backbone\Graphics Assets\Rect.h" />
+    <ClInclude Include="Graphics Backbone\Graphics Assets\Texture.h" />
+    <ClInclude Include="Graphics Backbone\GraphicsObjects\GraphicsObject_Base.h" />
+    <ClInclude Include="Graphics Backbone\GraphicsObjects\GraphicsObject_Cartoon.h" />
+    <ClInclude Include="Graphics Backbone\GraphicsObjects\GraphicsObject_ColorFlat.h" />
+    <ClInclude Include="Graphics Backbone\GraphicsObjects\GraphicsObject_ColorLight.h" />
+    <ClInclude Include="Graphics Backbone\GraphicsObjects\GraphicsObject_Sprite.h" />
+    <ClInclude Include="Graphics Backbone\GraphicsObjects\GraphicsObject_TextureFlat.h" />
+    <ClInclude Include="Graphics Backbone\GraphicsObjects\GraphicsObject_TextureLight.h" />
+    <ClInclude Include="Graphics Backbone\GraphicsObjects\GraphicsObject_TextureOutlined.h" />
+    <ClInclude Include="Graphics Backbone\Models\AzulFileHdr.h" />
+    <ClInclude Include="Graphics Backbone\Models\FlatPlane.h" />
+    <ClInclude Include="Graphics Backbone\Models\MeshSeparator.h" />
+    <ClInclude Include="Graphics Backbone\Models\Model.h" />
+    <ClInclude Include="Graphics Backbone\Models\ModelTools.h" />
+    <ClInclude Include="Graphics Backbone\Models\Skybox.h" />
+    <ClInclude Include="Graphics Backbone\Shaders\GraphicsObject_Water.h" />
+    <ClInclude Include="Graphics Backbone\Shaders\Shader.h" />
+    <ClInclude Include="Graphics Backbone\Shaders\ShaderCartoon.h" />
+    <ClInclude Include="Graphics Backbone\Shaders\ShaderColor.h" />
+    <ClInclude Include="Graphics Backbone\Shaders\ShaderColorLight.h" />
+    <ClInclude Include="Graphics Backbone\Shaders\ShaderOutline.h" />
+    <ClInclude Include="Graphics Backbone\Shaders\ShaderTexture.h" />
+    <ClInclude Include="Graphics Backbone\Shaders\ShaderTextureLight.h" />
+    <ClInclude Include="Graphics Backbone\Shaders\ShaderWater.h" />
+    <ClInclude Include="Graphics Backbone\Tools\Camera.h" />
+    <ClInclude Include="Graphics Backbone\Windowing Control\WindowController.h" />
+    <ClInclude Include="GraphicsCore.h" />
+    <ClInclude Include="GraphicsUtility.h" />
+    <CLInclude Include="resource.h" />
+    <ClInclude Include="User Code\Objects + Classes\Game Demo\CameraController.h" />
+    <ClInclude Include="User Code\Objects + Classes\Game Demo\GameState.h" />
+    <ClInclude Include="User Code\Objects + Classes\Game Demo\House.h" />
+    <ClInclude Include="User Code\Objects + Classes\Game Demo\MiniMap.h" />
+    <ClInclude Include="User Code\Objects + Classes\Game Demo\NPCs\OldLady.h" />
+    <ClInclude Include="User Code\Objects + Classes\Game Demo\NPCs\OldMan.h" />
+    <ClInclude Include="User Code\Objects + Classes\Game Demo\Ocean.h" />
+    <ClInclude Include="User Code\Objects + Classes\Game Demo\PlayerCharacter.h" />
+    <ClInclude Include="User Code\Objects + Classes\Game Demo\Prop.h" />
+    <ClInclude Include="User Code\Objects + Classes\Game Demo\Text.h" />
+    <ClInclude Include="User Code\Objects + Classes\Playground Scene\DemoCam.h" />
+    <ClInclude Include="User Code\Objects + Classes\Playground Scene\dxdemoperson.h" />
+    <ClInclude Include="User Code\Objects + Classes\Playground Scene\Frigate.h" />
+    <ClInclude Include="User Code\Objects + Classes\Playground Scene\Ground.h" />
+    <ClInclude Include="User Code\Objects + Classes\Shader Experimentation\ExperimentCharacter.h" />
+    <ClInclude Include="User Code\Scenes\Game Demo\MainScene.h" />
+    <ClInclude Include="User Code\Scenes\Playground Scene\DemoScene.h" />
+    <ClInclude Include="User Code\Scenes\Shader Experimentation\ShaderExperimentScene.h" />
+    <ResourceCompile Include="Dockyard.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\dist\AzulCore\lib\AzulCore_Debug.lib" />
+    <Library Include="..\dist\DXTex\lib\DirectXTex.lib" />
     <Library Include="..\dist\File\lib\File_Debug.lib" />
-    <Library Include="..\dist\GLFW\lib\GLFW_Debug.lib" />
     <Library Include="..\dist\Math\lib\MathEngine_Debug.lib" />
-    <Library Include="..\dist\SB6\lib\sb6_Debug.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\Assets\Shaders\Cartoon.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\Assets\Shaders\ColorLight.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">main</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="..\Assets\Shaders\ColorSelected.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">main</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="..\Assets\Shaders\ColorSelected3D.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">main</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="..\Assets\Shaders\Outline.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="..\Assets\Shaders\SimpleColor.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">main</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="..\Assets\Shaders\SimpleColor3D.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">main</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="..\Assets\Shaders\SimpleColorPlus.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">main</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="..\Assets\Shaders\Texture.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">main</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="..\Assets\Shaders\TextureLight.hlsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">main</EntryPointName>
+    </FxCompile>
+    <FxCompile Include="..\Assets\Shaders\Water.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compute</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Compute</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">Compute</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Compute</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Compute</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Compute</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

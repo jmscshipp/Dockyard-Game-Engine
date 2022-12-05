@@ -9,7 +9,7 @@ class InputDeregistrationCommand : public SceneRegistrationCommand
 public:
 	// big four
 	InputDeregistrationCommand() = delete;
-	InputDeregistrationCommand(Inputable* thisInputable, AZUL_KEY k, InputableAttorney::EVENT_TYPE e);
+	InputDeregistrationCommand(Inputable* thisInputable, KEY k, InputableAttorney::EVENT_TYPE e);
 	InputDeregistrationCommand(const InputDeregistrationCommand&) = delete;
 	InputDeregistrationCommand& operator = (const InputDeregistrationCommand&) = delete;
 	virtual ~InputDeregistrationCommand() = default;
@@ -19,7 +19,7 @@ public:
 
 private:
 	Inputable* myInputable;
-	AZUL_KEY key;
+	KEY key;
 	InputableAttorney::EVENT_TYPE evnt;
 	InputableAttorney::RegistrationData* regData;
 };

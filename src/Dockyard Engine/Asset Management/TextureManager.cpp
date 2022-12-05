@@ -13,7 +13,7 @@ TextureManager::~TextureManager()
 		delete(element.second);
 }
 
-void TextureManager::PrivLoadTexture(std::string textureName, std::string textureFileLocation)
+void TextureManager::PrivLoadTexture(std::string textureName, std::wstring textureFileLocation)
 {
 	if (loadedTextures.count(textureName) > 0) // if a texture with this name has already been loaded
 	{
@@ -22,21 +22,9 @@ void TextureManager::PrivLoadTexture(std::string textureName, std::string textur
 	}
 	else
 	{
-		Texture* newLoadedTexture = new Texture((defaultPath + textureFileLocation).c_str());
-		loadedTextures.emplace(textureName, newLoadedTexture);
-	}
-}
-
-void TextureManager::PrivLoadTexture(std::string textureName, const unsigned char& red, const unsigned char& green, const unsigned char& blue, const unsigned char& alpha)
-{
-	if (loadedTextures.count(textureName) > 0) // if a texture with this name has already been loaded
-	{
-		// THROW ERROR
-		throw("!!! ERROR: There is already a loaded texture named " + textureName + " !!!\n");
-	}
-	else
-	{
-		Texture* newLoadedTexture = new Texture(red, green, blue, alpha);
+		std::wstring strPath = defaultPath + textureFileLocation;
+		LPCWSTR path = strPath.c_str();
+		Texture* newLoadedTexture = new Texture(path);
 		loadedTextures.emplace(textureName, newLoadedTexture);
 	}
 }

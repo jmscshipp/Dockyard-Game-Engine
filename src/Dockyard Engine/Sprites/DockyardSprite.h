@@ -1,10 +1,7 @@
 #ifndef _DockyardSprite
 #define _DockyardSprite
 
-#include "AzulCore.h"
-
-// forward declaration
-class Camera;
+#include "GraphicsCore.h"
 
 class DockyardSprite
 {
@@ -16,7 +13,7 @@ public:
 	DockyardSprite& operator = (const DockyardSprite&) = delete;
 	~DockyardSprite();
 
-	void Render(Camera* pCam);
+	void Render();
 
 	// get
 	float GetAngle();

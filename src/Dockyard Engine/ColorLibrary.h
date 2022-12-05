@@ -147,7 +147,6 @@ namespace Colors
 	const Vect WhiteSmoke = { 0.960784376f, 0.960784376f, 0.960784376f, 1.000000000f };
 	const Vect Yellow = { 1.000000000f, 1.000000000f, 0.000000000f, 1.000000000f };
 	const Vect YellowGreen = { 0.603921592f, 0.803921640f, 0.196078449f, 1.000000000f };
-
 };
 
 #endif

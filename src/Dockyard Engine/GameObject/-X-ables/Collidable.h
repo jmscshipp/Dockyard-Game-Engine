@@ -5,7 +5,12 @@
 #include "SceneAttorney.h"
 #include "CollisionManager.h"
 #include "CollidableGroup.h"
-#include "CollisionVolumeBSphere.h"
+#include "Matrix.h"
+#include "GraphicsCore.h"
+
+// forward declarations
+class CollisionVolume;
+
 // forward declarations
 class CollisionRegistrationCommand;
 class CollisionDeregistrationCommand;
@@ -19,7 +24,10 @@ public:
 	Collidable& operator = (const Collidable&) = delete;
 	virtual ~Collidable();
 
-	const CollisionVolumeBSphere& GetBSphere();
+	const CollisionVolume& GetCollisionVolume();
+	const CollisionVolumeBSphere& GetDefaultBSphere();
+	virtual void CollisionTerrain() {};
+	enum COLLISION_VOLUME_TYPE { BSPHERE, AABB, OBB};
 
 private:
 	CollisionManager::DockyardTypeID myID = CollisionManager::TYPEID_UNDEFINED;
@@ -32,9 +40,13 @@ private:
 	CollisionDeregistrationCommand* deregisterCmd;
 	SceneRegistrationState currentState;
 	CollidableGroup::CollidableCollectionRef myDeletePtr;
+	std::list<Vect*>::iterator minDefaultBSphereDeletePtr; // pointers to assign in collidable group min and max collections
+	std::list<Vect*>::iterator maxDefaultBSphereDeletePtr;
 
-	CollisionVolumeBSphere bSphere;
+	CollisionVolume* colVolume;
 	Model* colliderModel;
+	// for tiered collision test
+	CollisionVolumeBSphere* defaultBSphere;
 
 	friend class CollidableAttorney;
 
@@ -49,8 +61,8 @@ protected:
 	void SubmitCollisionDeregistration();
 
 	// collision volume
-	void SetColliderModel(Model* mod);
+	void SetColliderVolumeAndModel(COLLISION_VOLUME_TYPE volumeType, Model* mod);
 	void UpdateCollisionData(const Matrix& mat);
 };
 
-#endif
+#endif _Collidable

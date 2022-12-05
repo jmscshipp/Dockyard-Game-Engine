@@ -1,14 +1,17 @@
 #include "Dockyard.h"
-#include "AzulCore.h"
 #include "ShaderManagerAttorney.h"
 #include "TextureManagerAttorney.h"
 #include "ModelManagerAttorney.h"
+#include "TerrainManagerAttorney.h"
 #include "ImageManagerAttorney.h"
-#include "SpriteFontManagerAttorney.h"
+//#include "SpriteFontManagerAttorney.h"
 #include "TimeManagerAttorney.h"
+#include "TimeManager.h"
 #include "SceneManagerAttorney.h"
 #include "CollisionVisualizerAttorney.h"
 #include "ScreenLogAttorney.h"
+#include "WindowController.h"
+#include "GPUController.h"
 
 Dockyard* Dockyard::instance = nullptr;
 //-----------------------------------------------------------------------------
@@ -17,54 +20,53 @@ Dockyard* Dockyard::instance = nullptr;
 //      starting to run.  This is where it can query for any required services 
 //      and load any non-graphic related content. 
 //-----------------------------------------------------------------------------
-void Dockyard::Initialize()
+void Dockyard::NonstaticInitialize(HWND hwnd)
 {
+	assert(hwnd);
+
+	// Get window data through the window handle
+	RECT rc;
+	BOOL err = GetClientRect(hwnd, &rc);
+	assert(err);
+
+	// get width/hight
+	int mClientWidth = rc.right - rc.left;
+	int mClientHeight = rc.bottom - rc.top;
+
+	// init dx 11
+	GPUController::InitDirect3D(hwnd, mClientWidth, mClientHeight);
+
 	GameInitialize();
-}
-
-// loads engine content
-void Dockyard::LoadContent()
-{
-	this->LoadResources();
-}
-
-float Dockyard::PrivGetTimeInSeconds()
-{
-	return Engine::GetTimeInSeconds();
-}
-
-void Dockyard::PrivRun()
-{
-	this->run();
-	Delete();
+	SceneManagerAttorney::General::Instance();
+	LoadResources();
 }
 
 int Dockyard::PrivGetWidth()
 {
-	return Engine::getWidth();
+	return WindowController::GetWindowWidth();
 }
 
 int Dockyard::PrivGetHeight()
 {
-	return Engine::getHeight();
+	return WindowController::GetWindowHeight();
 }
 
 void Dockyard::PrivSetWindowName(const char* name)
 {
-	this->setWindowName(name);
+	WindowController::SetWindowName(name);
 }
 
 void Dockyard::PrivSetWidthHeight(int w, int h)
 {
-	this->setWidthHeight(w, h);
+	WindowController::SetWindowWidthHeight(w, h);
 }
 
-void Dockyard::PrivSetClear(float r, float g, float b, float a)
+void Dockyard::PrivSetBackgroundColor(const Vect& color)
 {
-	this->SetClearColor(r, g, b, a);
+	GPUController::SetBackgroundColor(color);
 }
 
-void Dockyard::Delete()
+void Dockyard::NonstaticDelete()
 {
 	delete instance;
 	instance = nullptr;
@@ -76,7 +78,7 @@ void Dockyard::Delete()
 //      Use this function to control process order
 //      Input, AI, Physics, Animation, and Graphics
 //-----------------------------------------------------------------------------
-void Dockyard::Update()
+void Dockyard::NonstaticUpdate()
 {
 	TimeManagerAttorney::System::ProcessTime();
 	SceneManagerAttorney::General::Update();
@@ -88,11 +90,13 @@ void Dockyard::Update()
 //	    Use this for draw graphics to the screen.
 //      Only do rendering here
 //-----------------------------------------------------------------------------
-void Dockyard::Draw()
+void Dockyard::NonstaticDraw()
 {
+	GPUController::ResetContext();
 	CollisionVisualizerAttorney::System::ProcessCollisionVisuals();
 	SceneManagerAttorney::General::Draw();
-	ScreenLogAttorney::Render();
+	//ScreenLogAttorney::Render();
+	GPUController::SwapChainSwitch();
 }
 
 //-----------------------------------------------------------------------------
@@ -100,24 +104,26 @@ void Dockyard::Draw()
 //       unload content (resources loaded above)
 //       unload all content that was loaded before the Engine Loop started
 //-----------------------------------------------------------------------------
-void Dockyard::UnLoadContent()
+Dockyard::~Dockyard()
 {
 	// asset clean up
 	ShaderManagerAttorney::Delete();
 	TextureManagerAttorney::Delete();
 	ModelManagerAttorney::Delete();
+	TerrainManagerAttorney::Delete();
 	ImageManagerAttorney::Delete();
-	SpriteFontManagerAttorney::Delete();
+	//SpriteFontManagerAttorney::Delete();
 
 	// debug systems clean up
 	CollisionVisualizerAttorney::System::Delete();
-	ScreenLogAttorney::Delete();
+	//ScreenLogAttorney::Delete();
 
 	// other systems clean up
 	SceneManagerAttorney::General::Delete();
 	TimeManagerAttorney::System::Delete();
+	
+	// directx stuff clean up
+	GPUController::Delete();
 
-	GameEnd();
+	Instance().GameEnd();
 }
-
-

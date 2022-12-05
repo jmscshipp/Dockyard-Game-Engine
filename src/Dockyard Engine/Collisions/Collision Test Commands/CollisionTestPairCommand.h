@@ -6,7 +6,6 @@
 // forward declaration
 class CollidableGroup;
 class CollisionDispatchBase;
-class CollisionVolumeBSphere; // used in test
 
 class CollisionTestPairCommand: public CollisionTestCommandBase
 {

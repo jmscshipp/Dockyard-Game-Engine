@@ -9,7 +9,6 @@
 #include "Vect.h"
 
 class Quat;
-
    
 class Matrix final : public Align16
 {

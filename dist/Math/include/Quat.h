@@ -322,10 +322,12 @@ private:
 
 private:
 
+// Level 4 complains nameless struct/union ...
+#pragma warning( disable : 4201)
 	// anonymous union
 	union 
 	{
-		__m128	qm;
+		__m128	m;
 
 		// anonymous struct
 		struct 

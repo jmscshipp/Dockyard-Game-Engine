@@ -1,19 +1,29 @@
 #include "Collidable.h"
-#include "SceneAttorney.h"
 #include "CollisionRegistrationCommand.h"
 #include "CollisionDeregistrationCommand.h"
+#include "CollisionVolumeBSphere.h"
+#include "CollisionVolumeAABB.h"
+#include "CollisionVolumeOBB.h"
+
+#include "CollisionVisualizer.h"
+#include "ColorLibrary.h"
 
 Collidable::Collidable()
+	: registerCmd(new CollisionRegistrationCommand(this)),
+	deregisterCmd(new CollisionDeregistrationCommand(this)),
+	currentState(SceneRegistrationState::CURRENTLY_DEREGISTERED),
+	colVolume(nullptr),
+	colliderModel(nullptr),
+	defaultBSphere(nullptr)
 {
-	currentState = SceneRegistrationState::CURRENTLY_DEREGISTERED;
-	registerCmd = new CollisionRegistrationCommand(this);
-	deregisterCmd = new CollisionDeregistrationCommand(this);
 }
 
 Collidable::~Collidable()
 {
 	delete registerCmd;
 	delete deregisterCmd;
+	delete colVolume;
+	delete defaultBSphere;
 }
 
 void Collidable::SubmitCollisionRegistration()
@@ -37,7 +47,7 @@ void Collidable::SceneRegistration()
 {
 	assert(currentState == SceneRegistrationState::PENDING_REGISTRATION);
 	//Trace::out("collidable registering to scene\n");
-	SceneAttorney::Registration::Register(this, myID, myDeletePtr);
+	SceneAttorney::Registration::Register(this, myID, myDeletePtr); // PLUG IN DELETE PTRS HEREEE
 
 	currentState = SceneRegistrationState::CURRENTLY_REGISTERED;
 }
@@ -51,17 +61,31 @@ void Collidable::SceneDeregistration()
 	currentState = SceneRegistrationState::CURRENTLY_DEREGISTERED;
 }
 
-const CollisionVolumeBSphere& Collidable::GetBSphere()
+const CollisionVolume& Collidable::GetCollisionVolume()
 {
-	return bSphere;
+	return *colVolume;
 }
 
-void Collidable::SetColliderModel(Model* mod)
+const CollisionVolumeBSphere& Collidable::GetDefaultBSphere()
+{
+	return *defaultBSphere;
+}
+
+void Collidable::SetColliderVolumeAndModel(COLLISION_VOLUME_TYPE volumeType, Model* mod)
 {
 	colliderModel = mod;
+	if (volumeType == COLLISION_VOLUME_TYPE::BSPHERE)
+		colVolume = new CollisionVolumeBSphere();
+	else if (volumeType == COLLISION_VOLUME_TYPE::AABB)
+		colVolume = new CollisionVolumeAABB();
+	else
+		colVolume = new CollisionVolumeOBB();
+
+	defaultBSphere = new CollisionVolumeBSphere();
 }
 
 void Collidable::UpdateCollisionData(const Matrix& mat)
 {
-	bSphere.ComputeData(colliderModel, mat);
+	defaultBSphere->ComputeData(colliderModel, mat);
+	colVolume->ComputeData(colliderModel, mat);
 }

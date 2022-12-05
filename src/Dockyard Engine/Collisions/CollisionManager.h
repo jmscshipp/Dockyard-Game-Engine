@@ -5,6 +5,7 @@
 #include <list>
 #include "CollisionTestPairCommand.h"
 #include "CollisionTestSelfCommand.h"
+#include "CollisionTestTerrainCommand.h"
 #include "CollisionDispatch.h"
 
 // forward declaration
@@ -66,6 +67,14 @@ public:
 		
 		CollisionDispatch<C, C>* pDispatch = new CollisionDispatch<C, C>();
 		colTestCmds.push_back(new CollisionTestSelfCommand(group, pDispatch));
+	}
+
+	template <typename C>
+	void SetCollisionTerrain()
+	{
+		CollidableGroup* group = colGroupCollection[GetTypeID<C>()];
+
+		colTestCmds.push_back(new CollisionTestTerrainCommand(group));
 	}
 };
 

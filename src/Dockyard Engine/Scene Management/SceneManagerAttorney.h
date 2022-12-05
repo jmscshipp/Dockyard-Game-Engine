@@ -18,7 +18,8 @@ public:
 	class General
 	{
 		friend class Dockyard;
-
+		
+		static void Instance() { SceneManager::Instance(); };
 		static void Update() { SceneManager::Update(); };
 		static void Draw() { SceneManager::Draw(); };
 		static void Delete() { SceneManager::Delete(); };

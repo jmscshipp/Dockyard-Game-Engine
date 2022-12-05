@@ -20,13 +20,7 @@ public:
     
 	static void SlerpArray( Quat *result, const Quat *source, const Quat *target, const float slerpFactor, const int numQuats );
 
-
 };
-	
-
-
-
-
 
 #endif 
 

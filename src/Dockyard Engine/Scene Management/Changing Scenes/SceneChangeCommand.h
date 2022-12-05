@@ -14,8 +14,6 @@ public:
 
 	void SetSceneToChangeTo(Scene*) override;
 	void Execute() override;
-
-private:
 };
 
 #endif

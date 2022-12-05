@@ -2,8 +2,7 @@
 #define _CollisionVolumeBSphere
 
 #include "CollisionVolume.h"
-
-// forward declaration
+#include "Matrix.h"
 
 class CollisionVolumeBSphere : public CollisionVolume, public Align16
 {
@@ -16,16 +15,22 @@ public:
 
 	// inherited from collision volume base class
 	void ComputeData(Model* mod, const Matrix& mat) override;
-	//bool Intersect(const CollisionVolume& other) override;
-	//bool Intersect(const CollisionVolumeBSphere& other) override;
+	void DebugView(const Vect& color) const override;
+	bool IntersectAccept(const CollisionVolume& other) const override;
+	bool IntersectVisit(const CollisionVolumeBSphere& other) const override;
+	bool IntersectVisit(const CollisionVolumeAABB& other) const override;
+	bool IntersectVisit(const CollisionVolumeOBB& other) const override;
 
 	// access private members
 	const Vect& GetCenter() const;
 	float GetRadius() const;
+	const Vect& GetMin() const;
+	const Vect& GetMax() const;
 
 private:
 	Vect center;
 	float radius;
+	Vect min, max;
 };
 
 #endif

@@ -4,7 +4,6 @@ ImageManager* ImageManager::instance = nullptr;
 
 ImageManager::ImageManager()
 {
-
 }
 
 ImageManager::~ImageManager()
@@ -22,7 +21,7 @@ void ImageManager::PrivLoad(std::string imageName, Texture* tex)
 	}
 	else
 	{
-		Image* newLoadedImage = new Image(tex, new Rect(0.0f, 0.0f, (float)tex->getWidth(), (float)tex->getHeight()));
+		Image* newLoadedImage = new Image(tex, new Rect(0.0f, 0.0f, (float)tex->GetWidth(), (float)tex->GetHeight()));
 		loadedImages.emplace(imageName, newLoadedImage);
 	}
 }

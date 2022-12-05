@@ -14,7 +14,7 @@ void KeyboardEventManager::ProcessKeyEvents()
 		it->second->ProcessKeyEvent();
 }
 
-void KeyboardEventManager::Register(Inputable* inp, AZUL_KEY k, InputableAttorney::EVENT_TYPE e, InputableAttorney::InputColRef& ref)
+void KeyboardEventManager::Register(Inputable* inp, KEY k, InputableAttorney::EVENT_TYPE e, InputableAttorney::InputColRef& ref)
 {
 	SingleKeyEventManager* keyEventMgr;
 
@@ -22,7 +22,7 @@ void KeyboardEventManager::Register(Inputable* inp, AZUL_KEY k, InputableAttorne
 	if (!singleKeyMgrs.count(k))
 	{
 		keyEventMgr = new SingleKeyEventManager(k);
-		singleKeyMgrs.insert(std::pair<AZUL_KEY, SingleKeyEventManager*>(k, keyEventMgr));
+		singleKeyMgrs.insert(std::pair<KEY, SingleKeyEventManager*>(k, keyEventMgr));
 	}
 	else // otherwise use existing one
 		keyEventMgr = singleKeyMgrs.find(k)->second;
@@ -30,7 +30,7 @@ void KeyboardEventManager::Register(Inputable* inp, AZUL_KEY k, InputableAttorne
 	keyEventMgr->Register(inp, e, ref);
 }
 
-void KeyboardEventManager::Deregister(AZUL_KEY k, InputableAttorney::EVENT_TYPE e, InputableAttorney::InputColRef& ref)
+void KeyboardEventManager::Deregister(KEY k, InputableAttorney::EVENT_TYPE e, InputableAttorney::InputColRef& ref)
 {
 	singleKeyMgrs.find(k)->second->Deregister(e, ref);
 }

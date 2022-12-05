@@ -4,8 +4,17 @@ ModelManager* ModelManager::instance = nullptr;
 
 ModelManager::ModelManager()
 {
-	defaultSpriteModel = new Model(Model::PreMadeModels::UnitSquareXY);
-	loadedModels.emplace(spriteDefaultKey, defaultSpriteModel);
+	//Model* defaultSpriteModel = new Model(Model::PreMadeModels::UnitSquareXY);
+	//loadedModels.emplace("defaultSpriteModel", defaultSpriteModel);
+
+	Model* unitSphere = new Model(Model::PreMadeModels::UnitSphere);
+	loadedModels.emplace("UnitSphere", unitSphere);
+
+	Model* unitBox = new Model(Model::PreMadeModels::UnitBox);
+	loadedModels.emplace("UnitBox", unitBox);
+
+	Model* unitSquare2D = new Model(Model::PreMadeModels::UnitSquare2D);
+	loadedModels.emplace("UnitSquare2D", unitSquare2D);
 }
 
 ModelManager::~ModelManager()

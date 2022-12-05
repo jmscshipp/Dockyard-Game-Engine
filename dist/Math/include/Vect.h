@@ -6,6 +6,7 @@
 #include <smmintrin.h> 
 #include "Constants.h"
 #include "Align16.h"
+
 // forward declare
 class Matrix;
 
@@ -88,20 +89,17 @@ friend Matrix;
 	// anonymous union
 	union 
 	{
-		__m128	vm;
+		__m128	m;
 
 		// anonymous struct
 		struct 
-			{
+		{
 			float _x;
 			float _y;
 			float _z;
 			float _w;
-			};
+		};
 	};
-
-
 };
-
 
 #endif

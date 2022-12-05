@@ -18,11 +18,11 @@ public:
 	~KeyboardEventManager();
 
 	void ProcessKeyEvents();
-	void Register(Inputable* inp, AZUL_KEY k, InputableAttorney::EVENT_TYPE e, InputableAttorney::InputColRef &ref);
-	void Deregister(AZUL_KEY k, InputableAttorney::EVENT_TYPE e, InputableAttorney::InputColRef& ref);
+	void Register(Inputable* inp, KEY k, InputableAttorney::EVENT_TYPE e, InputableAttorney::InputColRef &ref);
+	void Deregister(KEY k, InputableAttorney::EVENT_TYPE e, InputableAttorney::InputColRef& ref);
 
 private:
-	using MapKeyManager = std::map<AZUL_KEY, SingleKeyEventManager*>;
+	using MapKeyManager = std::map<KEY, SingleKeyEventManager*>;
 	MapKeyManager singleKeyMgrs;
 };
 

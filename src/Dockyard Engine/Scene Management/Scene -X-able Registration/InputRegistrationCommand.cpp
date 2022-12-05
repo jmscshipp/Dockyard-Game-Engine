@@ -1,6 +1,6 @@
 #include "InputRegistrationCommand.h"
 
-InputRegistrationCommand::InputRegistrationCommand(Inputable* thisInputable, AZUL_KEY k, InputableAttorney::EVENT_TYPE e)
+InputRegistrationCommand::InputRegistrationCommand(Inputable* thisInputable, KEY k, InputableAttorney::EVENT_TYPE e)
 	: myInputable(thisInputable),
 	key(k),
 	evnt(e),

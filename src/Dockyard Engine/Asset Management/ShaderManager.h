@@ -1,7 +1,7 @@
 #ifndef _ShaderManager
 #define _ShaderManager
 
-#include "AzulCore.h"
+#include "GraphicsCore.h"
 #include <map>
 
 class ShaderManager
@@ -22,20 +22,21 @@ private:
 		return *instance;
 	};
 
-	void PrivLoadShader(std::string shaderName, std::string shaderFileLocation);
-	ShaderObject* PrivGetShader(std::string shaderName);
+	//void PrivLoadShader(std::string shaderName, std::string shaderFileLocation);
+	void PrivLoadShader(std::string shaderName, Shader* shader);
+	Shader* PrivGetShader(std::string shaderName);
 	void NonstaticDelete();
 	static void Delete() { Instance().NonstaticDelete(); }; // so we don't delete before singleton is made
 
 	// to allow Dockyard to Delete() singleton
 	friend class ShaderManagerAttorney;
 
-	const std::string defaultPath = "Shaders/"; // need to include '/' for file path;
+	const std::string defaultPath = "../Assets/Shaders/"; // need to include '/' for file path;
 
-	ShaderObject* defaultSpriteShader;
+	Shader* defaultSpriteShader;
 	const std::string spriteShaderDefaultKey = "defaultSpriteShader";
 
-	std::map<std::string, ShaderObject*> loadedShaders;
+	std::map<std::string, Shader*> loadedShaders;
 
 public:
 	/// \brief Loads a shader from from specified file location
@@ -57,7 +58,7 @@ public:
 	///		}
 	///		\endcode
 	/// \note In most cases, shaders should be loaded in Dockyard::LoadResources to be accessed elsewhere with ShaderManager::GetShader
-	static void LoadShader(std::string shaderName, std::string shaderFileLocation) { Instance().PrivLoadShader(shaderName, shaderFileLocation); }
+	static void LoadShader(std::string shaderName, Shader* shader) { Instance().PrivLoadShader(shaderName, shader); }
 	/// \brief Retrieve previously loaded shader by name
 	/// \ingroup ASSETMANAGEMENT 
 	/// 		 
@@ -80,7 +81,7 @@ public:
 	///		}
 	///		\endcode
 	/// \note shaders most be loaded with ShaderManager::LoadShader before being retrieved
-	static ShaderObject* GetShader(std::string shaderName) { return Instance().PrivGetShader(shaderName); }
+	static Shader* GetShader(std::string shaderName) { return Instance().PrivGetShader(shaderName); }
 };
 
 #endif

@@ -1,7 +1,7 @@
 #ifndef _TextureManager
 #define _TextureManager
 
-#include "AzulCore.h"
+#include "GraphicsCore.h"
 #include <map>
 
 class TextureManager
@@ -22,8 +22,8 @@ private:
 		return *instance;
 	};
 
-	void PrivLoadTexture(std::string textureName, std::string textureFileLocation);
-	void PrivLoadTexture(std::string textureName, const unsigned char& red, const unsigned char& green, const unsigned char& blue, const unsigned char& alpha);
+	void PrivLoadTexture(std::string textureName, std::wstring textureFileLocation);
+	//void PrivLoadTexture(std::string textureName, const unsigned char& red, const unsigned char& green, const unsigned char& blue, const unsigned char& alpha);
 	Texture* PrivGetTexture(std::string textureName);
 	void NonstaticDelete();
 	static void Delete() { Instance().NonstaticDelete(); }; // so we don't delete before singleton is made
@@ -31,7 +31,7 @@ private:
 	// to allow Dockyard to Delete() singleton
 	friend class TextureManagerAttorney;
 
-	const std::string defaultPath = "Textures/"; // need to include '/' for file path
+	const std::wstring defaultPath = L"../Assets/Textures/"; // need to include '/' for file path
 	std::map<std::string, Texture*> loadedTextures;
 
 public:
@@ -55,7 +55,7 @@ public:
 	///		\endcode
 	/// \note The texture file being loaded must be in Targa (.tga) format to be loaded correctly.
 	/// In most cases, textures should be loaded in Dockyard::LoadResources to be accessed elsewhere with TextureManager::GetTexture
-	static void LoadTexture(std::string textureName, std::string textureFileLocation) { Instance().PrivLoadTexture(textureName, textureFileLocation); }
+	static void LoadTexture(std::string textureName, std::wstring textureFileLocation) { Instance().PrivLoadTexture(textureName, textureFileLocation); }
 	/// \brief Loads a flat color texture with the specified rgba values
 	/// \ingroup ASSETMANAGEMENT 
 	/// 	
@@ -78,7 +78,8 @@ public:
 	///		}
 	///		\endcode
 	/// \note In most cases, textures should be loaded in Dockyard::LoadResources to be accessed elsewhere with TextureManager::GetTexture
-	static void LoadTexture(std::string textureName, const unsigned char&red, const unsigned char& green, const unsigned char& blue, const unsigned char& alpha) { Instance().PrivLoadTexture(textureName, red, green, blue, alpha); }
+	// ACTIVATE HERE vv TO ADD BACK IN LOAD TEXTURE FROM COLOR ///////////////////
+	////////////////////////static void LoadTexture(std::string textureName, const unsigned char&red, const unsigned char& green, const unsigned char& blue, const unsigned char& alpha) { Instance().PrivLoadTexture(textureName, red, green, blue, alpha); }
 	/// \brief Retrieve previously loaded texture by name
 	/// \ingroup ASSETMANAGEMENT 
 	/// 		 

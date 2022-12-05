@@ -1,7 +1,8 @@
 #ifndef _ImageManager
 #define _ImageManager
 
-#include "AzulCore.h"
+#include "Image.h"
+#include "Texture.h"
 #include <map>
 
 class ImageManager
@@ -101,4 +102,3 @@ public:
 };
 
 #endif
-

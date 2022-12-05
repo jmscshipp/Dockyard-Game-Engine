@@ -1,7 +1,7 @@
 #ifndef _CameraManager
 #define _CameraManager
 
-#include "AzulCore.h"
+#include "Camera.h"
 
 class CameraManager
 {

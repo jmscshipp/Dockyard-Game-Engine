@@ -21,8 +21,9 @@ public:
 	{
 		friend class SingleKeyEventManager;
 	private:
-		static void KeyPressed(Inputable* inp, AZUL_KEY k) { inp->KeyPressed(k); };
-		static void KeyReleased(Inputable* inp, AZUL_KEY k) { inp->KeyReleased(k); };
+		static void KeyPressed(Inputable* inp, KEY k) { inp->KeyPressed(k); };
+		static void KeyHeld(Inputable* inp, KEY k) { inp->KeyHeld(k); };
+		static void KeyReleased(Inputable* inp, KEY k) { inp->KeyReleased(k); };
 	};
 
 	class Registration
@@ -30,8 +31,8 @@ public:
 		friend class InputRegistrationCommand;
 		friend class InputDeregistrationCommand;
 	private:
-		static void SceneRegistration(Inputable* inp, AZUL_KEY k, EVENT_TYPE e, RegistrationData* ref) { inp->SceneRegistration(k, e, ref); }
-		static void SceneDeregistration(Inputable* inp, AZUL_KEY k, EVENT_TYPE e, RegistrationData* ref) { inp->SceneDeregistration(k, e, ref); }
+		static void SceneRegistration(Inputable* inp, KEY k, EVENT_TYPE e, RegistrationData* ref) { inp->SceneRegistration(k, e, ref); }
+		static void SceneDeregistration(Inputable* inp, KEY k, EVENT_TYPE e, RegistrationData* ref) { inp->SceneDeregistration(k, e, ref); }
 	};
 };
 

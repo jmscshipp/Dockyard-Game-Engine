@@ -13,7 +13,13 @@ DockyardSprite::DockyardSprite(std::string imageName)
 	scaleY(1.0f)
 {
 	Image* myImage = ImageManager::GetImage(imageName);
-	gObjSprite = new GraphicsObject_Sprite(ModelManager::GetModel("defaultSpriteModel"), ShaderManager::GetShader("defaultSpriteShader"), myImage, myImage->pImageRect);
+	gObjSprite = new GraphicsObject_Sprite(myImage->GetTexture());
+	Matrix spritescale = Matrix(SCALE, 1, 1, 1.0f);
+	Matrix spriterot = Matrix(ROT_Y, 0);
+	Matrix spritetrans = Matrix(TRANS, 0, 0, 0.0f);
+	Matrix spriteworld = spritescale * spriterot * spritetrans;
+	gObjSprite->SetWorld(spriteworld);
+
 }
 
 DockyardSprite::~DockyardSprite()
@@ -21,9 +27,9 @@ DockyardSprite::~DockyardSprite()
 	delete gObjSprite;
 }
 
-void DockyardSprite::Render(Camera* pCam)
+void DockyardSprite::Render()
 {
-	gObjSprite->Render(pCam);
+	gObjSprite->RenderSolid();
 }
 
 float DockyardSprite::GetAngle()
@@ -33,12 +39,12 @@ float DockyardSprite::GetAngle()
 
 float DockyardSprite::GetWidth()
 {
-	return gObjSprite->origWidth * scaleX;
+	return scaleX;
 }
 
 float DockyardSprite::GetHeight()
 {
-	return gObjSprite->origHeight * scaleY;
+	return scaleY;
 }
 
 void DockyardSprite::SetAngle(float a)
@@ -56,8 +62,7 @@ void DockyardSprite::SetCenter(float offsetX, float offsetY)
 
 void DockyardSprite::SetPosition(float x, float y)
 {
-	gObjSprite->origPosX = x;
-	gObjSprite->origPosY = y;
+	gObjSprite->SetPosition(Vect(x, y, 0));
 	UpdateWorld();
 }
 
@@ -70,16 +75,16 @@ void DockyardSprite::SetScaleFactor(float x, float y)
 
 void DockyardSprite::SetScalePixel(float width, float height)
 {
-	scaleX = width / gObjSprite->origWidth;
-	scaleY = height / gObjSprite->origHeight;
-	UpdateWorld();
+	//scaleX = width / gObjSprite->origWidth;
+	//scaleY = height / gObjSprite->origHeight;
+	//UpdateWorld();
 }
 
 void DockyardSprite::UpdateWorld()
 {
 	Matrix scale = Matrix(SCALE, scaleX, scaleY, 1.0f);
 	Matrix rot = Matrix(TRANS, -centerX, -centerY, 0.0f) * Matrix(ROT_Z, angle) * Matrix(TRANS, centerX, centerY, 0.0f);
-	Matrix trans = Matrix(TRANS, gObjSprite->origPosX, gObjSprite->origPosY, 0.0f);
+	Matrix trans = Matrix(TRANS, gObjSprite->GetPosition());
 	Matrix world = scale * rot * trans;
 	gObjSprite->SetWorld(world);
 }
